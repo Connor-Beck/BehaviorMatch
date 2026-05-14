@@ -1,0 +1,8 @@
+pc_ts,time_str,message
+4000.000,00:00:00,[System] Console log
+4001.000,00:00:01,Cue1: 13000
+4001.100,00:00:01,Cue2: 13000
+4001.200,00:00:01,Correct turn: Right
+4002.000,00:00:02,"Time: 2000 ms, Sensor: WM1"
+4003.000,00:00:03,"Time: 3000 ms, Sensor: Wait"
+4004.000,00:00:04,"Time: 4000 ms, Sensor: Gate"

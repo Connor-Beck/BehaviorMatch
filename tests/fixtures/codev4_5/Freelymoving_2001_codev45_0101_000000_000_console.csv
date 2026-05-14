@@ -1,0 +1,18 @@
+pc_ts,time_str,message
+1000.000,00:00:00,[System] Console log
+1001.000,00:00:01,"MEGA_EVT,100000,TRAINING_STAGE,4"
+1002.000,00:00:02,"MEGA_EVT,200000,TRIAL_START_INDEX,1"
+1002.100,00:00:02,Cue1: 12000
+1002.200,00:00:02,Cue2: 6000
+1002.300,00:00:02,Correct turn: Left
+1003.000,00:00:03,"MEGA_EVT,300000,SENSOR,WM2"
+1004.000,00:00:04,"MEGA_EVT,400000,SENSOR,Lick Left"
+1005.000,00:00:05,"MEGA_EVT,500000,RETURN,Return Left"
+1005.100,00:00:05,"Time: 5000, Total trial: 1, Success Rate: 100, Correct Count: 1, Miss Count: 0, Received turn: 0"
+1006.000,00:00:06,>>> RANDOM CUE TRIAL (STAGE 4) <<<
+1007.000,00:00:07,"MEGA_EVT,700000,TRIAL_START_INDEX,2"
+1007.100,00:00:07,Cue1: 6000
+1007.200,00:00:07,Cue2: 12000
+1007.300,00:00:07,Correct turn: Either
+1008.000,00:00:08,Reward delivered for random cue trial (Stage 4)
+1009.100,00:00:09,"Time: 9000, Total trial: 2, Success Rate: 100, Correct Count: 2, Miss Count: 0, Received turn: 1"

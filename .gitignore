@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+*.h5
+*.h5.tmp
+*.mat
+*.mat.tmp
+*_trials.csv
+*_events.csv
+*_sensor_events.csv
+*_summary.json

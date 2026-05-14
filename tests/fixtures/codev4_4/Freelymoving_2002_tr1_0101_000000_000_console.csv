@@ -1,0 +1,12 @@
+pc_ts,time_str,message
+2000.000,00:00:00,[System] Console log
+2001.000,00:00:01,Cue1: 12000
+2001.100,00:00:01,Cue2: 6000
+2001.200,00:00:01,Correct turn: Right
+2002.000,00:00:02,"Time: 2000 ms, Sensor: Lick Right"
+2003.000,00:00:03,"Time: 	3000, Total trial: 	1, Success Rate: 	100, Correct Count: 	1, Miss Count: 	0, Received turn: 	1, Stage1 active phase: 	2, WM_delay_ms: 	50"
+2004.000,00:00:04,Cue1: 6000
+2004.100,00:00:04,Cue2: 12000
+2004.200,00:00:04,Correct turn: Left
+2005.000,00:00:05,"Time: 5000 ms, Sensor: Lick Right"
+2006.000,00:00:06,"Time: 6000, Total trial: 2, Success Rate: 50, Correct Count: 1, Miss Count: 1, Received turn: 1, Stage1 active phase: 2, WM_delay_ms: 50"

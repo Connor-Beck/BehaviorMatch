@@ -1,0 +1,815 @@
+pc_ts,time_str,message
+1777935090.912965,18:51:30,[System] Console log → F:/Data\\Parkinson\\1363\\Freelymoving_1363_tr1_0504_185130_091\\Freelymoving_1363_tr1_0504_185130_091_console.csv
+1777935090.920715,18:51:30,[Start] Reset follow-state; gantry will move on first WM1 sensor trigger.
+1777935091.317669,18:51:31,[Serial] Connected to COM7 at 115200
+1777935091.467863,18:51:31,[WM] Stage 1 — last L0 -> start L0
+1777935091.467863,18:51:31,[WM] Sent SET_START_LEVEL=0 to Arduino.
+1777935091.487659,18:51:31,ACK_SET_START_LEVEL=0
+1777935091.750936,18:51:31,[Timing] Behavior camera frame pulses detected (UNO_EDGE)
+1777935091.984469,18:51:31,ACK:START_BEHAVIOR
+1777935091.999586,18:51:31,[Timing] Mega behavior sync pulses detected (UNO_EDGE)
+1777935092.000623,18:51:32,"WM_META task_name=wm_behavior,firmware_version=wm_behavior@1.0,mouse_id=1363,n_trials_target=150,time_cap_s=7200,punishment=true,start_level=0,session_iso=na"
+1777935108.975446,18:51:48,"Time: 17958 ms, Sensor: WM1"
+1777935110.828724,18:51:50,"Time: 19810 ms, Sensor: Wait"
+1777935110.858999,18:51:50,"Time: 19811 ms, Sensor: Wait Sensor"
+1777935114.533586,18:51:54,"Time: 23515 ms, Sensor: Wait"
+1777935116.147504,18:51:56,"Time: 25119 ms, Sensor: Wait"
+1777935119.238708,18:51:59,"Time: 28218 ms, Sensor: WM1"
+1777935122.355319,18:52:02,"Time: 31327 ms, Sensor: Wait"
+1777935122.390949,18:52:02,"Time: 31328 ms, Sensor: Wait Sensor"
+1777935128.217150,18:52:08,"Time: 37188 ms, Sensor: WM1"
+1777935138.308459,18:52:18,"Time: 47277 ms, Sensor: Wait Sensor"
+1777935138.340909,18:52:18,"Time: 47279 ms, Sensor: Wait"
+1777935140.843091,18:52:20,"Time: 49807 ms, Sensor: Wait"
+1777935146.197116,18:52:26,"Time: 55169 ms, Sensor: Wait"
+1777935198.279866,18:53:18,"Time: 107228 ms, Sensor: WM1"
+1777935204.108325,18:53:24,[Lock] Gantry locked to IR sensors only.
+1777935211.431736,18:53:31,"Time: 120384 ms, Sensor: Wait"
+1777935211.465023,18:53:31,"Time: 120388 ms, Sensor: Wait Sensor"
+1777935213.551187,18:53:33,[System] Sent OPEN_WM to Arduino.
+1777935213.567393,18:53:33,ACK:OPEN_WM
+1777935213.616379,18:53:33,"WM_TRIAL_START trial_index=1,standard_index=1,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=0,p_right_correct=0.50,p_correction=NA"
+1777935214.070621,18:53:34,[Timing] ScanImage frame pulses detected (UNO_EDGE)
+1777935217.120301,18:53:37,"Time: 126072 ms, Sensor: Wait"
+1777935220.658373,18:53:40,"Time: 129608 ms, Sensor: Wait"
+1777935222.130608,18:53:42,"Time: 131073 ms, Sensor: Gate"
+1777935222.160384,18:53:42,"Time: 131074 ms, Sensor: Gate"
+1777935222.641999,18:53:42,"Time: 131587 ms, Sensor: WM2"
+1777935224.828444,18:53:44,"Time: 133764 ms, Sensor: Lick Left"
+1777935224.889574,18:53:44,WM_CHOICE side=left
+1777935225.074435,18:53:45,PUNISH_DELIVERED reason=incorrect
+1777935290.677362,18:54:50,"Time: 199598 ms, Sensor: Left Back"
+1777935292.773602,18:54:52,"Time: 201699 ms, Sensor: Left Front"
+1777935294.274905,18:54:54,"Time: 203193 ms, Sensor: Return Left"
+1777935294.305839,18:54:54,"WM_TRIAL_SUMMARY trial_index=1,standard_index=1,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=0,p_right_correct=0.50,p_correction=NA,latency_ms=11253"
+1777935303.433594,18:55:03,"Time: 212356 ms, Sensor: WM1"
+1777935306.619481,18:55:06,"Time: 215532 ms, Sensor: Wait"
+1777935306.649945,18:55:06,"Time: 215534 ms, Sensor: Wait Sensor"
+1777935306.680077,18:55:06,WM_CORRECTION_TRIAL
+1777935306.727910,18:55:06,"WM_TRIAL_START trial_index=2,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=1,p_right_correct=NA,p_correction=1.00"
+1777935311.871674,18:55:11,"Time: 220790 ms, Sensor: Gate"
+1777935311.902221,18:55:11,"Time: 220792 ms, Sensor: Gate"
+1777935312.472954,18:55:12,"Time: 221395 ms, Sensor: WM2"
+1777935314.599530,18:55:14,"Time: 223509 ms, Sensor: Lick Left"
+1777935314.667080,18:55:14,WM_CHOICE side=left
+1777935314.847773,18:55:14,PUNISH_DELIVERED reason=incorrect
+1777935318.797884,18:55:18,"Time: 227715 ms, Sensor: Left Back"
+1777935320.316988,18:55:20,"Time: 229238 ms, Sensor: Left Front"
+1777935321.588609,18:55:21,"Time: 230500 ms, Sensor: Return Left"
+1777935321.623774,18:55:21,"WM_TRIAL_SUMMARY trial_index=2,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=2,bias_left_count=1,p_right_correct=NA,p_correction=1.00,latency_ms=7970"
+1777935324.754577,18:55:24,"Time: 233665 ms, Sensor: WM1"
+1777935326.315198,18:55:26,"Time: 235231 ms, Sensor: Wait"
+1777935326.345855,18:55:26,"Time: 235232 ms, Sensor: Wait Sensor"
+1777935326.377938,18:55:26,WM_CORRECTION_TRIAL
+1777935326.424049,18:55:26,"WM_TRIAL_START trial_index=3,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=1,p_right_correct=NA,p_correction=1.00"
+1777935331.771813,18:55:31,"Time: 240685 ms, Sensor: Gate"
+1777935331.796609,18:55:31,"Time: 240686 ms, Sensor: Gate"
+1777935332.310300,18:55:32,"Time: 241229 ms, Sensor: WM2"
+1777935335.379269,18:55:35,"Time: 244285 ms, Sensor: Lick Right"
+1777935335.441745,18:55:35,WM_CHOICE side=right
+1777935335.471429,18:55:35,WM_CUE_REPLAY
+1777935336.172054,18:55:36,REWARD_DELIVERED side=right
+1777935345.362406,18:55:45,"Time: 254274 ms, Sensor: Right Back"
+1777935348.100620,18:55:48,"Time: 257013 ms, Sensor: Right Front"
+1777935349.235677,18:55:49,"Time: 258142 ms, Sensor: Return Right"
+1777935349.267184,18:55:49,"WM_TRIAL_SUMMARY trial_index=3,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=1,p_right_correct=NA,p_correction=1.00,latency_ms=9047"
+1777935354.416543,18:55:54,"Time: 263320 ms, Sensor: WM1"
+1777935355.474300,18:55:55,"Time: 264384 ms, Sensor: Wait"
+1777935355.501184,18:55:55,"Time: 264385 ms, Sensor: Wait Sensor"
+1777935355.564899,18:55:55,"WM_TRIAL_START trial_index=4,standard_index=2,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,bias_left_count=1,p_right_correct=0.50,p_correction=NA"
+1777935358.023769,18:55:58,"Time: 266938 ms, Sensor: Wait"
+1777935359.907645,18:55:59,"Time: 268806 ms, Sensor: Gate"
+1777935359.937008,18:55:59,"Time: 268807 ms, Sensor: Gate"
+1777935360.425537,18:56:00,"Time: 269317 ms, Sensor: WM2"
+1777935362.391005,18:56:02,"Time: 271294 ms, Sensor: Lick Left"
+1777935362.454811,18:56:02,WM_CHOICE side=left
+1777935362.485653,18:56:02,WM_CUE_REPLAY
+1777935363.197346,18:56:03,REWARD_DELIVERED side=left
+1777935422.152756,18:57:02,"Time: 331036 ms, Sensor: Left Back"
+1777935423.595832,18:57:03,"Time: 332483 ms, Sensor: Left Front"
+1777935424.806946,18:57:04,"Time: 333700 ms, Sensor: Return Left"
+1777935424.835839,18:57:04,"WM_TRIAL_SUMMARY trial_index=4,standard_index=2,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=1,p_right_correct=0.50,p_correction=NA,latency_ms=6906"
+1777935427.912862,18:57:07,"Time: 336805 ms, Sensor: WM1"
+1777935429.694265,18:57:09,"Time: 338578 ms, Sensor: Wait"
+1777935429.721402,18:57:09,"Time: 338581 ms, Sensor: Wait Sensor"
+1777935429.782759,18:57:09,"WM_TRIAL_START trial_index=5,standard_index=3,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=2,p_right_correct=0.50,p_correction=NA"
+1777935433.430919,18:57:13,"Time: 342323 ms, Sensor: WM1"
+1777935433.461444,18:57:13,SYNC_LED_ON_ms:342324
+1777935433.540739,18:57:13,SYNC_LED_OFF_ms:342424
+1777935434.810116,18:57:14,"Time: 343698 ms, Sensor: Wait"
+1777935434.840712,18:57:14,"Time: 343701 ms, Sensor: Wait Sensor"
+1777935435.710038,18:57:15,"Time: 344596 ms, Sensor: Gate"
+1777935435.747154,18:57:15,"Time: 344598 ms, Sensor: Gate"
+1777935436.098173,18:57:16,"Time: 344985 ms, Sensor: WM2"
+1777935438.330791,18:57:18,"Time: 347218 ms, Sensor: Lick Right"
+1777935438.392307,18:57:18,WM_CHOICE side=right
+1777935438.422651,18:57:18,WM_CUE_REPLAY
+1777935439.136041,18:57:19,REWARD_DELIVERED side=right
+1777935450.665034,18:57:30,"Time: 359545 ms, Sensor: Right Back"
+1777935451.986870,18:57:31,"Time: 360864 ms, Sensor: Right Front"
+1777935452.899492,18:57:32,"Time: 361784 ms, Sensor: Return Right"
+1777935452.932628,18:57:32,WM_LEVEL_CHANGED level=1 trial=3
+1777935452.965784,18:57:32,"WM_TRIAL_SUMMARY trial_index=5,standard_index=3,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=2,p_right_correct=0.50,p_correction=NA,latency_ms=4896"
+1777935454.978266,18:57:34,"Time: 363863 ms, Sensor: WM1"
+1777935455.533188,18:57:35,"Time: 364409 ms, Sensor: Wait Sensor"
+1777935455.596361,18:57:35,"WM_TRIAL_START trial_index=6,standard_index=4,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=low,correct_side=left,bias_left_count=2,p_right_correct=0.50,p_correction=NA"
+1777935455.611194,18:57:35,"Time: 364433 ms, Sensor: Wait"
+1777935458.920656,18:57:38,"Time: 367804 ms, Sensor: Wait"
+1777935459.639189,18:57:39,"Time: 368520 ms, Sensor: Gate"
+1777935459.667280,18:57:39,"Time: 368521 ms, Sensor: Gate"
+1777935460.012658,18:57:40,"Time: 368890 ms, Sensor: WM2"
+1777935461.901314,18:57:41,"Time: 370779 ms, Sensor: Lick Left"
+1777935461.961775,18:57:41,WM_CHOICE side=left
+1777935461.993681,18:57:41,WM_CUE_REPLAY
+1777935462.704843,18:57:42,REWARD_DELIVERED side=left
+1777935476.523470,18:57:56,"Time: 385389 ms, Sensor: Left Back"
+1777935477.683237,18:57:57,"Time: 386556 ms, Sensor: Left Front"
+1777935478.863093,18:57:58,"Time: 387736 ms, Sensor: Return Left"
+1777935478.895494,18:57:58,"WM_TRIAL_SUMMARY trial_index=6,standard_index=4,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=low,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=2,p_right_correct=0.50,p_correction=NA,latency_ms=6371"
+1777935481.135384,18:58:01,"Time: 390003 ms, Sensor: WM1"
+1777935481.597255,18:58:01,"Time: 390475 ms, Sensor: Wait"
+1777935481.637363,18:58:01,"Time: 390478 ms, Sensor: Wait Sensor"
+1777935481.699972,18:58:01,"WM_TRIAL_START trial_index=7,standard_index=5,trial_type=standard,level=1,delay_ms=100,cue1=high,cue2=high,correct_side=left,bias_left_count=3,p_right_correct=0.50,p_correction=NA"
+1777935483.225960,18:58:03,"Time: 392092 ms, Sensor: Wait"
+1777935485.081779,18:58:05,"Time: 393949 ms, Sensor: Wait"
+1777935485.768252,18:58:05,"Time: 394644 ms, Sensor: Gate"
+1777935485.814442,18:58:05,"Time: 394647 ms, Sensor: Gate"
+1777935486.124231,18:58:06,"Time: 394990 ms, Sensor: WM2"
+1777935488.564574,18:58:08,"Time: 397438 ms, Sensor: Lick Right"
+1777935488.623036,18:58:08,WM_CHOICE side=right
+1777935488.830629,18:58:08,PUNISH_DELIVERED reason=incorrect
+1777935492.054932,18:58:12,"Time: 400927 ms, Sensor: Right Back"
+1777935492.971540,18:58:12,"Time: 401845 ms, Sensor: Right Front"
+1777935493.871239,18:58:13,"Time: 402739 ms, Sensor: Return Right"
+1777935493.904379,18:58:13,"WM_TRIAL_SUMMARY trial_index=7,standard_index=5,trial_type=standard,level=1,delay_ms=100,cue1=high,cue2=high,correct_side=left,chosen_side=right,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=3,p_right_correct=0.50,p_correction=NA,latency_ms=6958"
+1777935495.374009,18:58:15,"Time: 404244 ms, Sensor: WM1"
+1777935495.867346,18:58:15,"Time: 404737 ms, Sensor: Wait Sensor"
+1777935495.898083,18:58:15,WM_CORRECTION_TRIAL
+1777935495.945323,18:58:15,"WM_TRIAL_START trial_index=8,standard_index=NA,trial_type=correction,level=1,delay_ms=100,cue1=high,cue2=high,correct_side=left,bias_left_count=3,p_right_correct=NA,p_correction=0.80"
+1777935495.962272,18:58:15,"Time: 404762 ms, Sensor: Wait"
+1777935499.490868,18:58:19,"Time: 408351 ms, Sensor: Wait"
+1777935500.095763,18:58:20,"Time: 408957 ms, Sensor: Gate"
+1777935500.126332,18:58:20,"Time: 408960 ms, Sensor: Gate"
+1777935500.471135,18:58:20,"Time: 409329 ms, Sensor: WM2"
+1777935502.061091,18:58:22,"Time: 410927 ms, Sensor: Lick Left"
+1777935502.121856,18:58:22,WM_CHOICE side=left
+1777935502.154041,18:58:22,WM_CUE_REPLAY
+1777935502.866007,18:58:22,REWARD_DELIVERED side=left
+1777935514.165652,18:58:34,"Time: 423020 ms, Sensor: Left Back"
+1777935515.827094,18:58:35,"Time: 424686 ms, Sensor: Left Front"
+1777935516.975009,18:58:36,"Time: 425830 ms, Sensor: Return Left"
+1777935517.007413,18:58:37,"WM_TRIAL_SUMMARY trial_index=8,standard_index=NA,trial_type=correction,level=1,delay_ms=100,cue1=high,cue2=high,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=3,p_right_correct=NA,p_correction=0.80,latency_ms=6188"
+1777935520.273167,18:58:40,"Time: 429136 ms, Sensor: WM1"
+1777935520.957695,18:58:40,"Time: 429825 ms, Sensor: Wait"
+1777935520.982717,18:58:40,"Time: 429826 ms, Sensor: Wait Sensor"
+1777935521.045616,18:58:41,"WM_TRIAL_START trial_index=9,standard_index=6,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,bias_left_count=3,p_right_correct=0.50,p_correction=NA"
+1777935523.217949,18:58:43,"Time: 432077 ms, Sensor: Wait"
+1777935524.765115,18:58:44,"Time: 433628 ms, Sensor: Wait"
+1777935525.183753,18:58:45,"Time: 434042 ms, Sensor: Gate"
+1777935525.214138,18:58:45,"Time: 434043 ms, Sensor: Gate"
+1777935525.571042,18:58:45,"Time: 434434 ms, Sensor: WM2"
+1777935527.465018,18:58:47,"Time: 436316 ms, Sensor: Lick Left"
+1777935527.527890,18:58:47,WM_CHOICE side=left
+1777935527.714640,18:58:47,PUNISH_DELIVERED reason=incorrect
+1777935530.673738,18:58:50,"Time: 439529 ms, Sensor: Left Back"
+1777935531.777714,18:58:51,"Time: 440627 ms, Sensor: Left Front"
+1777935532.837171,18:58:52,"Time: 441691 ms, Sensor: Return Left"
+1777935532.861873,18:58:52,WM_LEVEL_CHANGED level=0 trial=6
+1777935532.898012,18:58:52,"WM_TRIAL_SUMMARY trial_index=9,standard_index=6,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=3,p_right_correct=0.50,p_correction=NA,latency_ms=6486"
+1777935534.775941,18:58:54,"Time: 443636 ms, Sensor: WM1"
+1777935535.334230,18:58:55,"Time: 444194 ms, Sensor: Wait Sensor"
+1777935535.362596,18:58:55,WM_CORRECTION_TRIAL
+1777935535.410539,18:58:55,"WM_TRIAL_START trial_index=10,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,bias_left_count=4,p_right_correct=NA,p_correction=1.00"
+1777935535.423781,18:58:55,"Time: 444220 ms, Sensor: Wait"
+1777935539.343840,18:58:59,"Time: 448200 ms, Sensor: Gate"
+1777935539.390864,18:58:59,"Time: 448203 ms, Sensor: Gate"
+1777935539.731940,18:58:59,"Time: 448592 ms, Sensor: WM2"
+1777935541.656469,18:59:01,"Time: 450512 ms, Sensor: Lick Right"
+1777935541.721310,18:59:01,WM_CHOICE side=right
+1777935541.750225,18:59:01,WM_CUE_REPLAY
+1777935542.463692,18:59:02,REWARD_DELIVERED side=right
+1777935552.419911,18:59:12,"Time: 461274 ms, Sensor: Right Back"
+1777935553.538608,18:59:13,"Time: 462386 ms, Sensor: Right Front"
+1777935554.546626,18:59:14,"Time: 463391 ms, Sensor: Return Right"
+1777935554.579370,18:59:14,"WM_TRIAL_SUMMARY trial_index=10,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=4,p_right_correct=NA,p_correction=1.00,latency_ms=6316"
+1777935556.509217,18:59:16,"Time: 465366 ms, Sensor: WM1"
+1777935558.713305,18:59:18,"Time: 467562 ms, Sensor: Wait Sensor"
+1777935558.787429,18:59:18,"WM_TRIAL_START trial_index=11,standard_index=7,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,bias_left_count=4,p_right_correct=0.50,p_correction=NA"
+1777935558.805940,18:59:18,"Time: 467655 ms, Sensor: Wait"
+1777935561.618464,18:59:21,"Time: 470464 ms, Sensor: Wait"
+1777935562.878509,18:59:22,"Time: 471733 ms, Sensor: Gate"
+1777935562.927986,18:59:22,"Time: 471736 ms, Sensor: Gate"
+1777935563.327694,18:59:23,"Time: 472174 ms, Sensor: WM2"
+1777935565.237703,18:59:25,"Time: 474090 ms, Sensor: Lick Right"
+1777935565.301285,18:59:25,WM_CHOICE side=right
+1777935565.502943,18:59:25,PUNISH_DELIVERED reason=incorrect
+1777935568.067109,18:59:28,"Time: 476918 ms, Sensor: Right Back"
+1777935568.983027,18:59:28,"Time: 477822 ms, Sensor: Right Front"
+1777935569.745250,18:59:29,"Time: 478590 ms, Sensor: Return Right"
+1777935569.779526,18:59:29,"WM_TRIAL_SUMMARY trial_index=11,standard_index=7,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,chosen_side=right,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=4,p_right_correct=0.50,p_correction=NA,latency_ms=6527"
+1777935571.478583,18:59:31,"Time: 480328 ms, Sensor: WM1"
+1777935571.994107,18:59:31,"Time: 480833 ms, Sensor: Wait"
+1777935572.023941,18:59:32,"Time: 480834 ms, Sensor: Wait Sensor"
+1777935572.063607,18:59:32,WM_CORRECTION_TRIAL
+1777935572.101799,18:59:32,"WM_TRIAL_START trial_index=12,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,bias_left_count=4,p_right_correct=NA,p_correction=1.00"
+1777935573.543576,18:59:33,"Time: 482390 ms, Sensor: Wait"
+1777935575.688135,18:59:35,"Time: 484529 ms, Sensor: Wait"
+1777935576.014692,18:59:36,"Time: 484865 ms, Sensor: Gate"
+1777935576.057193,18:59:36,"Time: 484868 ms, Sensor: Gate"
+1777935576.373348,18:59:36,"Time: 485210 ms, Sensor: WM2"
+1777935578.254612,18:59:38,"Time: 487104 ms, Sensor: Lick Left"
+1777935578.317656,18:59:38,WM_CHOICE side=left
+1777935578.341979,18:59:38,WM_CUE_REPLAY
+1777935579.057806,18:59:39,REWARD_DELIVERED side=left
+1777935589.081030,18:59:49,"Time: 497925 ms, Sensor: Left Back"
+1777935590.278734,18:59:50,"Time: 499118 ms, Sensor: Left Front"
+1777935591.492309,18:59:51,"Time: 500327 ms, Sensor: Return Left"
+1777935591.526115,18:59:51,"WM_TRIAL_SUMMARY trial_index=12,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=4,p_right_correct=NA,p_correction=1.00,latency_ms=6265"
+1777935593.808896,18:59:53,"Time: 502654 ms, Sensor: WM1"
+1777935594.475920,18:59:54,"Time: 503316 ms, Sensor: Wait"
+1777935594.506788,18:59:54,"Time: 503317 ms, Sensor: Wait Sensor"
+1777935594.568855,18:59:54,"WM_TRIAL_START trial_index=13,standard_index=8,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,bias_left_count=4,p_right_correct=0.50,p_correction=NA"
+1777935596.529578,18:59:56,"Time: 505374 ms, Sensor: Wait"
+1777935598.255140,18:59:58,"Time: 507098 ms, Sensor: Wait"
+1777935599.088970,18:59:59,"Time: 507933 ms, Sensor: Gate"
+1777935599.134854,18:59:59,"Time: 507936 ms, Sensor: Gate"
+1777935599.637532,18:59:59,"Time: 508478 ms, Sensor: WM2"
+1777935601.726415,19:00:01,"Time: 510568 ms, Sensor: Lick Left"
+1777935601.789072,19:00:01,WM_CHOICE side=left
+1777935601.820440,19:00:01,WM_CUE_REPLAY
+1777935602.533460,19:00:02,REWARD_DELIVERED side=left
+1777935614.224530,19:00:14,"Time: 523063 ms, Sensor: Left Back"
+1777935615.492053,19:00:15,"Time: 524324 ms, Sensor: Left Front"
+1777935616.623204,19:00:16,"Time: 525453 ms, Sensor: Return Left"
+1777935616.663241,19:00:16,"WM_TRIAL_SUMMARY trial_index=13,standard_index=8,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=4,p_right_correct=0.50,p_correction=NA,latency_ms=7248"
+1777935619.918984,19:00:19,"Time: 528747 ms, Sensor: WM1"
+1777935621.604532,19:00:21,"Time: 530436 ms, Sensor: Wait"
+1777935621.636787,19:00:21,"Time: 530437 ms, Sensor: Wait Sensor"
+1777935621.698272,19:00:21,"WM_TRIAL_START trial_index=14,standard_index=9,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777935625.199047,19:00:25,"Time: 534034 ms, Sensor: WM1"
+1777935625.229579,19:00:25,SYNC_LED_ON_ms:534035
+1777935625.305672,19:00:25,SYNC_LED_OFF_ms:534135
+1777935627.980160,19:00:27,"Time: 536808 ms, Sensor: Wait"
+1777935628.010557,19:00:28,"Time: 536810 ms, Sensor: Wait Sensor"
+1777935628.989696,19:00:28,"Time: 537817 ms, Sensor: Gate"
+1777935629.030179,19:00:29,"Time: 537818 ms, Sensor: Gate"
+1777935629.424816,19:00:29,"Time: 538255 ms, Sensor: WM2"
+1777935631.418300,19:00:31,"Time: 540248 ms, Sensor: Lick Right"
+1777935631.477163,19:00:31,WM_CHOICE side=right
+1777935631.508949,19:00:31,WM_CUE_REPLAY
+1777935632.224483,19:00:32,REWARD_DELIVERED side=right
+1777935640.401067,19:00:40,"Time: 549220 ms, Sensor: Right Back"
+1777935641.437058,19:00:41,"Time: 550258 ms, Sensor: Right Front"
+1777935642.279181,19:00:42,"Time: 551111 ms, Sensor: Return Right"
+1777935642.308175,19:00:42,WM_LEVEL_CHANGED level=1 trial=9
+1777935642.339022,19:00:42,"WM_TRIAL_SUMMARY trial_index=14,standard_index=9,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6214"
+1777935643.821145,19:00:43,"Time: 552648 ms, Sensor: WM1"
+1777935644.502392,19:00:44,"Time: 553331 ms, Sensor: Wait"
+1777935644.539475,19:00:44,"Time: 553334 ms, Sensor: Wait Sensor"
+1777935644.598891,19:00:44,"WM_TRIAL_START trial_index=15,standard_index=10,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=low,correct_side=left,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777935647.507377,19:00:47,"Time: 556331 ms, Sensor: Wait"
+1777935648.680521,19:00:48,"Time: 557502 ms, Sensor: Gate"
+1777935648.710381,19:00:48,"Time: 557503 ms, Sensor: Gate"
+1777935649.090605,19:00:49,"Time: 557920 ms, Sensor: WM2"
+1777935650.962485,19:00:50,"Time: 559785 ms, Sensor: Lick Right"
+1777935651.039670,19:00:51,WM_CHOICE side=right
+1777935651.223246,19:00:51,PUNISH_DELIVERED reason=incorrect
+1777935652.595722,19:00:52,"Time: 561426 ms, Sensor: Right Back"
+1777935653.564488,19:00:53,"Time: 562382 ms, Sensor: Right Front"
+1777935654.218701,19:00:54,"Time: 563040 ms, Sensor: Return Right"
+1777935654.251116,19:00:54,"WM_TRIAL_SUMMARY trial_index=15,standard_index=10,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=low,correct_side=left,chosen_side=right,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6449"
+1777935655.979286,19:00:55,"Time: 564803 ms, Sensor: WM1"
+1777935656.434176,19:00:56,"Time: 565261 ms, Sensor: Wait"
+1777935656.464486,19:00:56,"Time: 565262 ms, Sensor: Wait Sensor"
+1777935656.528404,19:00:56,"WM_TRIAL_START trial_index=16,standard_index=11,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=low,correct_side=left,bias_left_count=5,p_right_correct=0.50,p_correction=0.80"
+1777935659.308990,19:00:59,"Time: 568134 ms, Sensor: Wait"
+1777935660.652711,19:01:00,"Time: 569479 ms, Sensor: Gate"
+1777935660.679220,19:01:00,"Time: 569481 ms, Sensor: Gate"
+1777935660.958289,19:01:00,"Time: 569782 ms, Sensor: WM2"
+1777935662.483900,19:01:02,"Time: 571305 ms, Sensor: Lick Left"
+1777935662.546141,19:01:02,WM_CHOICE side=left
+1777935662.576588,19:01:02,WM_CUE_REPLAY
+1777935663.291107,19:01:03,REWARD_DELIVERED side=left
+1777935675.963812,19:01:15,"Time: 584773 ms, Sensor: Left Back"
+1777935677.087050,19:01:17,"Time: 585896 ms, Sensor: Left Front"
+1777935678.225199,19:01:18,"Time: 587034 ms, Sensor: Return Left"
+1777935678.249780,19:01:18,"WM_TRIAL_SUMMARY trial_index=16,standard_index=11,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=low,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=0.50,p_correction=0.80,latency_ms=6040"
+1777935680.670436,19:01:20,"Time: 589491 ms, Sensor: WM1"
+1777935681.631499,19:01:21,"Time: 590441 ms, Sensor: Wait Sensor"
+1777935681.693156,19:01:21,"WM_TRIAL_START trial_index=17,standard_index=12,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777935681.714897,19:01:21,"Time: 590465 ms, Sensor: Wait"
+1777935685.304207,19:01:25,"Time: 594122 ms, Sensor: Wait"
+1777935685.757096,19:01:25,"Time: 594578 ms, Sensor: Gate"
+1777935685.803999,19:01:25,"Time: 594581 ms, Sensor: Gate"
+1777935686.143376,19:01:26,"Time: 594950 ms, Sensor: WM2"
+1777935688.569135,19:01:28,"Time: 597388 ms, Sensor: Lick Left"
+1777935688.632327,19:01:28,WM_CHOICE side=left
+1777935688.833667,19:01:28,PUNISH_DELIVERED reason=incorrect
+1777935692.461465,19:01:32,"Time: 601269 ms, Sensor: Left Back"
+1777935693.611174,19:01:33,"Time: 602421 ms, Sensor: Left Front"
+1777935694.738763,19:01:34,"Time: 603554 ms, Sensor: Return Left"
+1777935694.773980,19:01:34,"WM_TRIAL_SUMMARY trial_index=17,standard_index=12,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6948"
+1777935696.798170,19:01:36,"Time: 605601 ms, Sensor: WM1"
+1777935697.285873,19:01:37,"Time: 606100 ms, Sensor: Wait Sensor"
+1777935697.315868,19:01:37,WM_CORRECTION_TRIAL
+1777935697.363321,19:01:37,"WM_TRIAL_START trial_index=18,standard_index=NA,trial_type=correction,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,bias_left_count=5,p_right_correct=NA,p_correction=0.80"
+1777935697.376655,19:01:37,"Time: 606126 ms, Sensor: Wait"
+1777935701.089424,19:01:41,"Time: 609899 ms, Sensor: Wait"
+1777935701.323682,19:01:41,"Time: 610138 ms, Sensor: Gate"
+1777935701.352391,19:01:41,"Time: 610139 ms, Sensor: Gate"
+1777935701.669798,19:01:41,"Time: 610465 ms, Sensor: WM2"
+1777935703.383459,19:01:43,"Time: 612193 ms, Sensor: Lick Right"
+1777935703.446377,19:01:43,WM_CHOICE side=right
+1777935703.476090,19:01:43,WM_CUE_REPLAY
+1777935704.191986,19:01:44,REWARD_DELIVERED side=right
+1777935713.567384,19:01:53,"Time: 622377 ms, Sensor: Right Back"
+1777935714.555138,19:01:54,"Time: 623357 ms, Sensor: Right Front"
+1777935715.372093,19:01:55,"Time: 624165 ms, Sensor: Return Right"
+1777935715.396150,19:01:55,"WM_TRIAL_SUMMARY trial_index=18,standard_index=NA,trial_type=correction,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=NA,p_correction=0.80,latency_ms=6092"
+1777935717.757615,19:01:57,"Time: 626567 ms, Sensor: WM1"
+1777935718.377881,19:01:58,"Time: 627175 ms, Sensor: Wait"
+1777935718.404286,19:01:58,"Time: 627176 ms, Sensor: Wait Sensor"
+1777935718.467572,19:01:58,"WM_TRIAL_START trial_index=19,standard_index=13,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777935720.774454,19:02:00,"Time: 629569 ms, Sensor: Wait"
+1777935722.094177,19:02:02,"Time: 630902 ms, Sensor: Wait"
+1777935722.547444,19:02:02,"Time: 631355 ms, Sensor: Gate"
+1777935722.583372,19:02:02,"Time: 631357 ms, Sensor: Gate"
+1777935722.934984,19:02:02,"Time: 631733 ms, Sensor: WM2"
+1777935724.833818,19:02:04,"Time: 633638 ms, Sensor: Lick Left"
+1777935724.896721,19:02:04,WM_CHOICE side=left
+1777935725.097579,19:02:05,PUNISH_DELIVERED reason=incorrect
+1777935727.564039,19:02:07,"Time: 636364 ms, Sensor: Left Back"
+1777935728.664605,19:02:08,"Time: 637469 ms, Sensor: Left Front"
+1777935729.732238,19:02:09,"Time: 638538 ms, Sensor: Return Left"
+1777935729.761387,19:02:09,WM_LEVEL_CHANGED level=0 trial=13
+1777935729.797688,19:02:09,"WM_TRIAL_SUMMARY trial_index=19,standard_index=13,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6457"
+1777935731.624293,19:02:11,"Time: 640430 ms, Sensor: WM1"
+1777935732.156003,19:02:12,"Time: 640953 ms, Sensor: Wait Sensor"
+1777935732.186194,19:02:12,WM_CORRECTION_TRIAL
+1777935732.234436,19:02:12,"WM_TRIAL_START trial_index=20,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,bias_left_count=6,p_right_correct=NA,p_correction=1.00"
+1777935732.247755,19:02:12,"Time: 640979 ms, Sensor: Wait"
+1777935735.916905,19:02:15,"Time: 644715 ms, Sensor: Wait"
+1777935736.322220,19:02:16,"Time: 645126 ms, Sensor: Gate"
+1777935736.368545,19:02:16,"Time: 645129 ms, Sensor: Gate"
+1777935736.708013,19:02:16,"Time: 645508 ms, Sensor: WM2"
+1777935738.478810,19:02:18,"Time: 647283 ms, Sensor: Lick Right"
+1777935738.540843,19:02:18,WM_CHOICE side=right
+1777935738.572864,19:02:18,WM_CUE_REPLAY
+1777935739.286258,19:02:19,REWARD_DELIVERED side=right
+1777935750.862102,19:02:30,"Time: 659663 ms, Sensor: Right Back"
+1777935751.821158,19:02:31,"Time: 660622 ms, Sensor: Right Front"
+1777935752.655913,19:02:32,"Time: 661445 ms, Sensor: Return Right"
+1777935752.689957,19:02:32,"WM_TRIAL_SUMMARY trial_index=20,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=NA,p_correction=1.00,latency_ms=6328"
+1777935755.062166,19:02:35,"Time: 663856 ms, Sensor: WM1"
+1777935755.587721,19:02:35,"Time: 664379 ms, Sensor: Wait"
+1777935755.617189,19:02:35,"Time: 664381 ms, Sensor: Wait Sensor"
+1777935755.679408,19:02:35,"WM_TRIAL_START trial_index=21,standard_index=14,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=6,p_right_correct=0.60,p_correction=NA"
+1777935759.348003,19:02:39,"Time: 668144 ms, Sensor: Wait"
+1777935759.588433,19:02:39,"Time: 668374 ms, Sensor: Gate"
+1777935759.613618,19:02:39,"Time: 668375 ms, Sensor: Gate"
+1777935759.893412,19:02:39,"Time: 668684 ms, Sensor: WM2"
+1777935761.494780,19:02:41,"Time: 670283 ms, Sensor: Lick Right"
+1777935761.556697,19:02:41,WM_CHOICE side=right
+1777935761.587456,19:02:41,WM_CUE_REPLAY
+1777935762.291316,19:02:42,REWARD_DELIVERED side=right
+1777935770.466086,19:02:50,"Time: 679254 ms, Sensor: Right Back"
+1777935771.868501,19:02:51,"Time: 680658 ms, Sensor: Right Front"
+1777935772.586575,19:02:52,"Time: 681372 ms, Sensor: Return Right"
+1777935772.620724,19:02:52,"WM_TRIAL_SUMMARY trial_index=21,standard_index=14,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=0.60,p_correction=NA,latency_ms=5898"
+1777935775.323683,19:02:55,"Time: 684116 ms, Sensor: WM1"
+1777935775.940862,19:02:55,"Time: 684727 ms, Sensor: Wait"
+1777935775.973843,19:02:55,"Time: 684728 ms, Sensor: Wait Sensor"
+1777935776.037224,19:02:56,"WM_TRIAL_START trial_index=22,standard_index=15,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777935779.608392,19:02:59,"Time: 688390 ms, Sensor: Wait"
+1777935780.001179,19:03:00,"Time: 688789 ms, Sensor: Gate"
+1777935780.026267,19:03:00,"Time: 688790 ms, Sensor: Gate"
+1777935780.307295,19:03:00,"Time: 689100 ms, Sensor: WM2"
+1777935782.073855,19:03:02,"Time: 690853 ms, Sensor: Lick Right"
+1777935782.135762,19:03:02,WM_CHOICE side=right
+1777935782.168350,19:03:02,WM_CUE_REPLAY
+1777935782.884998,19:03:02,REWARD_DELIVERED side=right
+1777935793.190628,19:03:13,"Time: 701977 ms, Sensor: Right Back"
+1777935794.477695,19:03:14,"Time: 703260 ms, Sensor: Right Front"
+1777935795.289056,19:03:15,"Time: 704072 ms, Sensor: Return Right"
+1777935795.318914,19:03:15,WM_LEVEL_CHANGED level=1 trial=15
+1777935795.353894,19:03:15,"WM_TRIAL_SUMMARY trial_index=22,standard_index=15,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6121"
+1777935797.059960,19:03:17,"Time: 705836 ms, Sensor: WM1"
+1777935797.314212,19:03:17,[DLC] Worker started: C:\\Users\\ScanImage\\anaconda3\\envs\\DLC3_LIVE\\python.exe C:\\Users\\ScanImage\\MouseMaze\\dlc_live_worker.py --config C:\\Users\\ScanImage\\Documents\\MouseMaze\\DLC\\config.yaml --shuffle 1 --model C:\\Users\\ScanImage\\Documents\\MouseMaze\\DLC\\DLC_MouseOverhead-Full_resnet_50_iteration-0_shuffle-1_snapshot-best-130.pt
+1777935798.098472,19:03:18,"Time: 706886 ms, Sensor: Wait"
+1777935798.142829,19:03:18,"Time: 706888 ms, Sensor: Wait Sensor"
+1777935798.207322,19:03:18,"WM_TRIAL_START trial_index=23,standard_index=16,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=low,correct_side=left,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777935801.162913,19:03:21,"Time: 709951 ms, Sensor: Wait"
+1777935802.142456,19:03:22,"Time: 710925 ms, Sensor: Gate"
+1777935802.173944,19:03:22,"Time: 710926 ms, Sensor: Gate"
+1777935802.511166,19:03:22,"Time: 711274 ms, Sensor: WM2"
+1777935803.943758,19:03:23,"Time: 712729 ms, Sensor: Lick Left"
+1777935804.001784,19:03:24,WM_CHOICE side=left
+1777935804.033902,19:03:24,WM_CUE_REPLAY
+1777935804.766352,19:03:24,REWARD_DELIVERED side=left
+1777935810.158251,19:03:30,[DLC_WORKER] [DLC] bodyparts=27 pcutoff=0.6 dotsize=12.0
+1777935810.159554,19:03:30,[DLC_WORKER] [DLC] torch=2.6.0+cu124 cuda_available=True device=cuda:0
+1777935810.159554,19:03:30,[DLC_WORKER] [DLC] Loading exported model: C:\\Users\\ScanImage\\Documents\\MouseMaze\\DLC\\DLC_MouseOverhead-Full_resnet_50_iteration-0_shuffle-1_snapshot-best-130.pt
+1777935810.159554,19:03:30,[DLC_WORKER] [DLC] CUDA device: NVIDIA GeForce GTX 1660 SUPER
+1777935810.159554,19:03:30,[DLC_WORKER] [DLC] Model ready (DLCLive) using: C:\\Users\\ScanImage\\Documents\\MouseMaze\\DLC\\DLC_MouseOverhead-Full_resnet_50_iteration-0_shuffle-1_snapshot-best-130.pt
+1777935810.159554,19:03:30,[DLC] Worker selected PUB port: 5560
+1777935815.615440,19:03:35,[Lock] Gantry unlocked (switching to DLC + IR lock).
+1777935815.615440,19:03:35,[Lock] Gantry locked to DLC + IR sensors.
+1777935820.754997,19:03:40,"Time: 729532 ms, Sensor: Left Back"
+1777935822.368823,19:03:42,"Time: 731141 ms, Sensor: Left Front"
+1777935823.659296,19:03:43,"Time: 732435 ms, Sensor: Return Left"
+1777935823.691339,19:03:43,"WM_TRIAL_SUMMARY trial_index=23,standard_index=16,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=low,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=5838"
+1777935830.212240,19:03:50,"Time: 738984 ms, Sensor: WM1"
+1777935831.012351,19:03:51,"Time: 739781 ms, Sensor: Wait"
+1777935831.050860,19:03:51,"Time: 739783 ms, Sensor: Wait Sensor"
+1777935831.111131,19:03:51,"WM_TRIAL_START trial_index=24,standard_index=17,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777935835.690270,19:03:55,"Time: 744466 ms, Sensor: Gate"
+1777935835.739337,19:03:55,"Time: 744469 ms, Sensor: Gate"
+1777935836.078180,19:03:56,"Time: 744851 ms, Sensor: WM2"
+1777935837.949480,19:03:57,"Time: 746723 ms, Sensor: Lick Left"
+1777935838.011080,19:03:58,WM_CHOICE side=left
+1777935838.210819,19:03:58,PUNISH_DELIVERED reason=incorrect
+1777935843.399347,19:04:03,"Time: 752165 ms, Sensor: Left Back"
+1777935844.658690,19:04:04,"Time: 753429 ms, Sensor: Left Front"
+1777935845.801297,19:04:05,"Time: 754562 ms, Sensor: Return Left"
+1777935845.826274,19:04:05,"WM_TRIAL_SUMMARY trial_index=24,standard_index=17,trial_type=standard,level=1,delay_ms=100,cue1=low,cue2=high,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6936"
+1777935850.575134,19:04:10,"Time: 759335 ms, Sensor: WM1"
+1777935851.111427,19:04:11,"Time: 759869 ms, Sensor: Wait"
+1777935851.150089,19:04:11,"Time: 759870 ms, Sensor: Wait Sensor"
+1777935851.211818,19:04:11,"WM_TRIAL_START trial_index=25,standard_index=18,trial_type=standard,level=1,delay_ms=100,cue1=high,cue2=low,correct_side=right,bias_left_count=6,p_right_correct=0.60,p_correction=0.80"
+1777935855.345876,19:04:15,"Time: 764115 ms, Sensor: Wait"
+1777935856.491379,19:04:16,"Time: 765252 ms, Sensor: Gate"
+1777935856.520690,19:04:16,"Time: 765254 ms, Sensor: Gate"
+1777935856.813409,19:04:16,"Time: 765582 ms, Sensor: WM2"
+1777935859.418212,19:04:19,"Time: 768185 ms, Sensor: Lick Left"
+1777935859.479405,19:04:19,WM_CHOICE side=left
+1777935859.684176,19:04:19,PUNISH_DELIVERED reason=incorrect
+1777935861.137372,19:04:21,"Time: 769907 ms, Sensor: Left Back"
+1777935861.751325,19:04:21,[Lock] Gantry unlocked (switching to IR-only lock).
+1777935861.751325,19:04:21,[Lock] Gantry locked to IR sensors only.
+1777935862.159797,19:04:22,"Time: 770922 ms, Sensor: Left Front"
+1777935863.896165,19:04:23,"Time: 772653 ms, Sensor: Return Left"
+1777935863.931929,19:04:23,WM_LEVEL_CHANGED level=0 trial=18
+1777935863.961286,19:04:23,"WM_TRIAL_SUMMARY trial_index=25,standard_index=18,trial_type=standard,level=1,delay_ms=100,cue1=high,cue2=low,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=2,bias_left_count=6,p_right_correct=0.60,p_correction=0.80,latency_ms=8310"
+1777935865.939848,19:04:25,"Time: 774694 ms, Sensor: WM1"
+1777935866.577281,19:04:26,"Time: 775346 ms, Sensor: Wait"
+1777935866.609830,19:04:26,"Time: 775348 ms, Sensor: Wait Sensor"
+1777935866.640202,19:04:26,WM_CORRECTION_TRIAL
+1777935866.696954,19:04:26,"WM_TRIAL_START trial_index=26,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=6,p_right_correct=NA,p_correction=1.00"
+1777935869.550699,19:04:29,"Time: 778309 ms, Sensor: Wait"
+1777935870.606519,19:04:30,"Time: 779372 ms, Sensor: Gate"
+1777935870.634527,19:04:30,"Time: 779373 ms, Sensor: Gate"
+1777935870.979304,19:04:30,"Time: 779745 ms, Sensor: WM2"
+1777935872.625512,19:04:32,"Time: 781377 ms, Sensor: Lick Right"
+1777935872.687280,19:04:32,WM_CHOICE side=right
+1777935872.714295,19:04:32,WM_CUE_REPLAY
+1777935873.424702,19:04:33,REWARD_DELIVERED side=right
+1777935884.384271,19:04:44,"Time: 793143 ms, Sensor: Right Back"
+1777935885.818349,19:04:45,"Time: 794572 ms, Sensor: Right Front"
+1777935886.772691,19:04:46,"Time: 795533 ms, Sensor: Return Right"
+1777935886.803847,19:04:46,"WM_TRIAL_SUMMARY trial_index=26,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=NA,p_correction=1.00,latency_ms=6023"
+1777935888.713831,19:04:48,"Time: 797467 ms, Sensor: WM1"
+1777935889.290737,19:04:49,"Time: 798039 ms, Sensor: Wait"
+1777935889.321502,19:04:49,"Time: 798040 ms, Sensor: Wait Sensor"
+1777935889.385256,19:04:49,"WM_TRIAL_START trial_index=27,standard_index=19,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,bias_left_count=6,p_right_correct=0.60,p_correction=NA"
+1777935892.428456,19:04:52,"Time: 801179 ms, Sensor: Wait"
+1777935893.350466,19:04:53,"Time: 802097 ms, Sensor: Gate"
+1777935893.379661,19:04:53,"Time: 802099 ms, Sensor: Gate"
+1777935893.691103,19:04:53,"Time: 802443 ms, Sensor: WM2"
+1777935895.434491,19:04:55,"Time: 804196 ms, Sensor: Lick Right"
+1777935895.498271,19:04:55,WM_CHOICE side=right
+1777935895.522994,19:04:55,WM_CUE_REPLAY
+1777935896.254774,19:04:56,REWARD_DELIVERED side=right
+1777935906.560232,19:05:06,"Time: 815311 ms, Sensor: Right Back"
+1777935907.587140,19:05:07,"Time: 816334 ms, Sensor: Right Front"
+1777935908.381076,19:05:08,"Time: 817129 ms, Sensor: Return Right"
+1777935908.409562,19:05:08,"WM_TRIAL_SUMMARY trial_index=27,standard_index=19,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=0.60,p_correction=NA,latency_ms=6152"
+1777935910.051682,19:05:10,"Time: 818793 ms, Sensor: WM1"
+1777935910.670641,19:05:10,"Time: 819419 ms, Sensor: Wait"
+1777935910.702491,19:05:10,"Time: 819422 ms, Sensor: Wait Sensor"
+1777935910.765833,19:05:10,"WM_TRIAL_START trial_index=28,standard_index=20,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=6,p_right_correct=0.60,p_correction=NA"
+1777935914.403296,19:05:14,"Time: 823156 ms, Sensor: Wait"
+1777935914.760424,19:05:14,"Time: 823502 ms, Sensor: Gate"
+1777935914.791275,19:05:14,"Time: 823504 ms, Sensor: Gate"
+1777935915.615394,19:05:15,"Time: 824370 ms, Sensor: WM2"
+1777935917.286875,19:05:17,"Time: 826030 ms, Sensor: Lick Left"
+1777935917.349338,19:05:17,WM_CHOICE side=left
+1777935917.537739,19:05:17,PUNISH_DELIVERED reason=incorrect
+1777935920.571786,19:05:20,"Time: 829315 ms, Sensor: Left Back"
+1777935921.855588,19:05:21,"Time: 830607 ms, Sensor: Left Front"
+1777935923.002230,19:05:23,"Time: 831751 ms, Sensor: Return Left"
+1777935923.039906,19:05:23,[WM] State saved: level 0.
+1777935923.039906,19:05:23,"WM_TRIAL_SUMMARY trial_index=28,standard_index=20,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=6,p_right_correct=0.60,p_correction=NA,latency_ms=6605"
+1777935925.345510,19:05:25,"Time: 834097 ms, Sensor: WM1"
+1777935925.872419,19:05:25,"Time: 834622 ms, Sensor: Wait Sensor"
+1777935925.906484,19:05:25,WM_CORRECTION_TRIAL
+1777935925.949345,19:05:25,"WM_TRIAL_START trial_index=29,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=7,p_right_correct=NA,p_correction=1.00"
+1777935925.967943,19:05:25,"Time: 834648 ms, Sensor: Wait"
+1777935929.622973,19:05:29,"Time: 838371 ms, Sensor: Wait"
+1777935929.948869,19:05:29,"Time: 838687 ms, Sensor: Gate"
+1777935929.979496,19:05:29,"Time: 838688 ms, Sensor: Gate"
+1777935930.318646,19:05:30,"Time: 839061 ms, Sensor: WM2"
+1777935932.589356,19:05:32,"Time: 841318 ms, Sensor: Lick Right"
+1777935932.644709,19:05:32,WM_CHOICE side=right
+1777935932.675089,19:05:32,WM_CUE_REPLAY
+1777935933.373392,19:05:33,REWARD_DELIVERED side=right
+1777935942.521907,19:05:42,"Time: 851259 ms, Sensor: Right Back"
+1777935944.139082,19:05:44,"Time: 852874 ms, Sensor: Right Front"
+1777935945.285644,19:05:45,"Time: 854022 ms, Sensor: Return Right"
+1777935945.317436,19:05:45,"WM_TRIAL_SUMMARY trial_index=29,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=7,p_right_correct=NA,p_correction=1.00,latency_ms=6694"
+1777935950.778972,19:05:50,"Time: 859515 ms, Sensor: WM1"
+1777935951.939682,19:05:51,"Time: 860679 ms, Sensor: Wait Sensor"
+1777935952.005734,19:05:52,"WM_TRIAL_START trial_index=30,standard_index=21,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=7,p_right_correct=0.70,p_correction=NA"
+1777935952.019565,19:05:52,"Time: 860703 ms, Sensor: Wait"
+1777935956.068422,19:05:56,"Time: 864803 ms, Sensor: Gate"
+1777935956.114128,19:05:56,"Time: 864806 ms, Sensor: Gate"
+1777935956.456109,19:05:56,"Time: 865192 ms, Sensor: WM2"
+1777935958.151592,19:05:58,"Time: 866883 ms, Sensor: Lick Right"
+1777935958.213895,19:05:58,WM_CHOICE side=right
+1777935958.243316,19:05:58,WM_CUE_REPLAY
+1777935958.957104,19:05:58,REWARD_DELIVERED side=right
+1777935967.832893,19:06:07,"Time: 876562 ms, Sensor: Right Back"
+1777935969.624563,19:06:09,"Time: 878358 ms, Sensor: Right Front"
+1777935971.491873,19:06:11,"Time: 880226 ms, Sensor: Return Right"
+1777935971.525249,19:06:11,"WM_TRIAL_SUMMARY trial_index=30,standard_index=21,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=7,p_right_correct=0.70,p_correction=NA,latency_ms=6204"
+1777935973.269995,19:06:13,"Time: 881996 ms, Sensor: WM1"
+1777935974.293924,19:06:14,"Time: 883024 ms, Sensor: Wait"
+1777935974.324304,19:06:14,"Time: 883025 ms, Sensor: Wait Sensor"
+1777935974.388803,19:06:14,"WM_TRIAL_START trial_index=31,standard_index=22,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,bias_left_count=6,p_right_correct=0.60,p_correction=NA"
+1777935976.105982,19:06:16,"Time: 884844 ms, Sensor: Wait"
+1777935977.296081,19:06:17,"Time: 886030 ms, Sensor: Wait"
+1777935979.624483,19:06:19,"Time: 888354 ms, Sensor: Gate"
+1777935979.664289,19:06:19,"Time: 888357 ms, Sensor: Gate"
+1777935980.050409,19:06:20,"Time: 888787 ms, Sensor: WM2"
+1777935982.226267,19:06:22,"Time: 890956 ms, Sensor: Lick Left"
+1777935982.288551,19:06:22,WM_CHOICE side=left
+1777935982.318804,19:06:22,WM_CUE_REPLAY
+1777935983.027956,19:06:23,REWARD_DELIVERED side=left
+1777935992.645602,19:06:32,"Time: 901374 ms, Sensor: Left Back"
+1777935995.296951,19:06:35,"Time: 904024 ms, Sensor: Left Back"
+1777935997.271603,19:06:37,"Time: 905996 ms, Sensor: Left Front"
+1777935998.775896,19:06:38,"Time: 907506 ms, Sensor: Return Left"
+1777935998.806874,19:06:38,WM_LEVEL_CHANGED level=1 trial=22
+1777935998.840042,19:06:38,"WM_TRIAL_SUMMARY trial_index=31,standard_index=22,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=0.60,p_correction=NA,latency_ms=7925"
+1777936012.456391,19:06:52,"Time: 921165 ms, Sensor: WM1"
+1777936013.152986,19:06:53,"Time: 921877 ms, Sensor: Wait"
+1777936013.191475,19:06:53,"Time: 921878 ms, Sensor: Wait Sensor"
+1777936013.254337,19:06:53,"WM_TRIAL_START trial_index=32,standard_index=23,trial_type=standard,level=1,delay_ms=100,cue1=high,cue2=high,correct_side=left,bias_left_count=6,p_right_correct=0.60,p_correction=NA"
+1777936016.734014,19:06:56,"Time: 925456 ms, Sensor: Wait"
+1777936017.561380,19:06:57,"Time: 926278 ms, Sensor: Gate"
+1777936017.588883,19:06:57,"Time: 926279 ms, Sensor: Gate"
+1777936017.944781,19:06:57,"Time: 926659 ms, Sensor: WM2"
+1777936019.769044,19:06:59,"Time: 928487 ms, Sensor: Lick Right"
+1777936019.832292,19:06:59,WM_CHOICE side=right
+1777936020.032109,19:07:00,PUNISH_DELIVERED reason=incorrect
+1777936022.609314,19:07:02,"Time: 931322 ms, Sensor: Right Back"
+1777936023.896329,19:07:03,"Time: 932612 ms, Sensor: Right Front"
+1777936024.775542,19:07:04,"Time: 933488 ms, Sensor: Return Right"
+1777936024.816612,19:07:04,"WM_TRIAL_SUMMARY trial_index=32,standard_index=23,trial_type=standard,level=1,delay_ms=100,cue1=high,cue2=high,correct_side=left,chosen_side=right,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=6,p_right_correct=0.60,p_correction=NA,latency_ms=6604"
+1777936026.390891,19:07:06,"Time: 935100 ms, Sensor: WM1"
+1777936027.078728,19:07:07,"Time: 935793 ms, Sensor: Wait"
+1777936027.104319,19:07:07,"Time: 935795 ms, Sensor: Wait Sensor"
+1777936027.136440,19:07:07,WM_CORRECTION_TRIAL
+1777936027.182314,19:07:07,"WM_TRIAL_START trial_index=33,standard_index=NA,trial_type=correction,level=1,delay_ms=100,cue1=high,cue2=high,correct_side=left,bias_left_count=5,p_right_correct=NA,p_correction=0.80"
+1777936030.961008,19:07:10,"Time: 939671 ms, Sensor: Wait"
+1777936031.225922,19:07:11,"Time: 939943 ms, Sensor: Gate"
+1777936031.256369,19:07:11,"Time: 939944 ms, Sensor: Gate"
+1777936031.555484,19:07:11,"Time: 940274 ms, Sensor: WM2"
+1777936032.919405,19:07:12,"Time: 941638 ms, Sensor: Lick Left"
+1777936032.984730,19:07:12,WM_CHOICE side=left
+1777936033.012661,19:07:13,WM_CUE_REPLAY
+1777936033.728672,19:07:13,REWARD_DELIVERED side=left
+1777936073.589664,19:07:53,"Time: 982297 ms, Sensor: Left Back"
+1777936076.316592,19:07:56,"Time: 985016 ms, Sensor: Left Front"
+1777936083.297903,19:08:03,"Time: 992002 ms, Sensor: Return Left"
+1777936083.328696,19:08:03,"WM_TRIAL_SUMMARY trial_index=33,standard_index=NA,trial_type=correction,level=1,delay_ms=100,cue1=high,cue2=high,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=NA,p_correction=0.80,latency_ms=5839"
+1777936086.700535,19:08:06,"Time: 995404 ms, Sensor: WM1"
+1777936087.216698,19:08:07,"Time: 995921 ms, Sensor: Wait Sensor"
+1777936087.277005,19:08:07,"WM_TRIAL_START trial_index=34,standard_index=24,trial_type=standard,level=1,delay_ms=100,cue1=high,cue2=low,correct_side=right,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777936087.291108,19:08:07,"Time: 995946 ms, Sensor: Wait"
+1777936091.090597,19:08:11,"Time: 999790 ms, Sensor: Wait"
+1777936091.385731,19:08:11,"Time: 1000085 ms, Sensor: Gate"
+1777936091.416239,19:08:11,"Time: 1000086 ms, Sensor: Gate"
+1777936091.758754,19:08:11,"Time: 1000455 ms, Sensor: WM2"
+1777936093.512350,19:08:13,"Time: 1002213 ms, Sensor: Lick Left"
+1777936093.573785,19:08:13,WM_CHOICE side=left
+1777936093.776385,19:08:13,PUNISH_DELIVERED reason=incorrect
+1777936096.387088,19:08:16,"Time: 1005081 ms, Sensor: Left Back"
+1777936098.176253,19:08:18,"Time: 1006870 ms, Sensor: Left Front"
+1777936099.333635,19:08:19,"Time: 1008024 ms, Sensor: Return Left"
+1777936099.368484,19:08:19,WM_LEVEL_CHANGED level=0 trial=24
+1777936099.396873,19:08:19,"WM_TRIAL_SUMMARY trial_index=34,standard_index=24,trial_type=standard,level=1,delay_ms=100,cue1=high,cue2=low,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6292"
+1777936101.833213,19:08:21,"Time: 1010526 ms, Sensor: WM1"
+1777936102.513272,19:08:22,"Time: 1011204 ms, Sensor: Wait"
+1777936102.546423,19:08:22,"Time: 1011206 ms, Sensor: Wait Sensor"
+1777936102.577178,19:08:22,WM_CORRECTION_TRIAL
+1777936102.623094,19:08:22,"WM_TRIAL_START trial_index=35,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=6,p_right_correct=NA,p_correction=1.00"
+1777936106.042229,19:08:26,"Time: 1014742 ms, Sensor: Wait"
+1777936106.563504,19:08:26,"Time: 1015249 ms, Sensor: Gate"
+1777936106.601920,19:08:26,"Time: 1015252 ms, Sensor: Gate"
+1777936106.956917,19:08:26,"Time: 1015650 ms, Sensor: WM2"
+1777936108.884323,19:08:28,"Time: 1017573 ms, Sensor: Lick Right"
+1777936108.946268,19:08:28,WM_CHOICE side=right
+1777936108.979452,19:08:28,WM_CUE_REPLAY
+1777936109.689083,19:08:29,REWARD_DELIVERED side=right
+1777936117.011420,19:08:37,"Time: 1025703 ms, Sensor: Right Back"
+1777936118.387896,19:08:38,"Time: 1027078 ms, Sensor: Right Front"
+1777936119.384640,19:08:39,"Time: 1028080 ms, Sensor: Return Right"
+1777936119.413618,19:08:39,"WM_TRIAL_SUMMARY trial_index=35,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=NA,p_correction=1.00,latency_ms=6362"
+1777936121.717412,19:08:41,"Time: 1030408 ms, Sensor: WM1"
+1777936122.373377,19:08:42,"Time: 1031054 ms, Sensor: Wait Sensor"
+1777936122.435601,19:08:42,"WM_TRIAL_START trial_index=36,standard_index=25,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,bias_left_count=6,p_right_correct=0.60,p_correction=NA"
+1777936122.449404,19:08:42,"Time: 1031078 ms, Sensor: Wait"
+1777936125.641233,19:08:45,"Time: 1034329 ms, Sensor: Wait"
+1777936126.495828,19:08:46,"Time: 1035181 ms, Sensor: Gate"
+1777936126.541445,19:08:46,"Time: 1035185 ms, Sensor: Gate"
+1777936126.870166,19:08:46,"Time: 1035549 ms, Sensor: WM2"
+1777936128.680100,19:08:48,"Time: 1037360 ms, Sensor: Lick Right"
+1777936128.741424,19:08:48,WM_CHOICE side=right
+1777936128.941141,19:08:48,PUNISH_DELIVERED reason=incorrect
+1777936130.385473,19:08:50,"Time: 1039070 ms, Sensor: Right Back"
+1777936131.560498,19:08:51,"Time: 1040244 ms, Sensor: Right Front"
+1777936132.368366,19:08:52,"Time: 1041054 ms, Sensor: Return Right"
+1777936132.400130,19:08:52,"WM_TRIAL_SUMMARY trial_index=36,standard_index=25,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,chosen_side=right,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=6,p_right_correct=0.60,p_correction=NA,latency_ms=6306"
+1777936134.542814,19:08:54,"Time: 1043224 ms, Sensor: WM1"
+1777936135.104487,19:08:55,"Time: 1043794 ms, Sensor: Wait"
+1777936135.133489,19:08:55,"Time: 1043795 ms, Sensor: Wait Sensor"
+1777936135.164166,19:08:55,WM_CORRECTION_TRIAL
+1777936135.213877,19:08:55,"WM_TRIAL_START trial_index=37,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,bias_left_count=6,p_right_correct=NA,p_correction=1.00"
+1777936136.714218,19:08:56,"Time: 1045398 ms, Sensor: Wait"
+1777936138.783497,19:08:58,"Time: 1047464 ms, Sensor: Wait"
+1777936139.370669,19:08:59,"Time: 1048053 ms, Sensor: Gate"
+1777936139.401622,19:08:59,"Time: 1048055 ms, Sensor: Gate"
+1777936139.741452,19:08:59,"Time: 1048421 ms, Sensor: WM2"
+1777936141.238650,19:09:01,"Time: 1049919 ms, Sensor: Lick Left"
+1777936141.316764,19:09:01,WM_CHOICE side=left
+1777936141.347966,19:09:01,WM_CUE_REPLAY
+1777936142.035010,19:09:02,REWARD_DELIVERED side=left
+1777936156.431169,19:09:16,"Time: 1065103 ms, Sensor: Left Back"
+1777936157.899695,19:09:17,"Time: 1066576 ms, Sensor: Left Front"
+1777936159.156264,19:09:19,"Time: 1067836 ms, Sensor: Return Left"
+1777936159.188594,19:09:19,"WM_TRIAL_SUMMARY trial_index=37,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=high,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=NA,p_correction=1.00,latency_ms=6118"
+1777936165.833252,19:09:25,"Time: 1074502 ms, Sensor: WM1"
+1777936166.467952,19:09:26,"Time: 1075146 ms, Sensor: Wait"
+1777936166.499110,19:09:26,"Time: 1075147 ms, Sensor: Wait Sensor"
+1777936166.561864,19:09:26,"WM_TRIAL_START trial_index=38,standard_index=26,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=6,p_right_correct=0.60,p_correction=NA"
+1777936170.376912,19:09:30,"Time: 1079047 ms, Sensor: Wait"
+1777936170.762778,19:09:30,"Time: 1079431 ms, Sensor: Gate"
+1777936170.791806,19:09:30,"Time: 1079433 ms, Sensor: Gate"
+1777936171.220037,19:09:31,"Time: 1079892 ms, Sensor: WM2"
+1777936172.888107,19:09:32,"Time: 1081563 ms, Sensor: Lick Left"
+1777936172.950665,19:09:32,WM_CHOICE side=left
+1777936173.152164,19:09:33,PUNISH_DELIVERED reason=incorrect
+1777936176.551619,19:09:36,"Time: 1085218 ms, Sensor: Left Back"
+1777936178.078625,19:09:38,"Time: 1086750 ms, Sensor: Left Front"
+1777936179.330454,19:09:39,"Time: 1088008 ms, Sensor: Return Left"
+1777936179.363119,19:09:39,"WM_TRIAL_SUMMARY trial_index=38,standard_index=26,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=6,p_right_correct=0.60,p_correction=NA,latency_ms=6411"
+1777936182.148637,19:09:42,"Time: 1090826 ms, Sensor: WM1"
+1777936183.063834,19:09:43,"Time: 1091736 ms, Sensor: Wait Sensor"
+1777936183.102246,19:09:43,WM_CORRECTION_TRIAL
+1777936183.144757,19:09:43,"WM_TRIAL_START trial_index=39,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=6,p_right_correct=NA,p_correction=1.00"
+1777936183.162711,19:09:43,"Time: 1091762 ms, Sensor: Wait"
+1777936186.850880,19:09:46,"Time: 1095508 ms, Sensor: Wait"
+1777936187.456556,19:09:47,"Time: 1096132 ms, Sensor: Gate"
+1777936187.501821,19:09:47,"Time: 1096135 ms, Sensor: Gate"
+1777936187.914966,19:09:47,"Time: 1096568 ms, Sensor: WM2"
+1777936189.745149,19:09:49,"Time: 1098414 ms, Sensor: Lick Right"
+1777936189.806231,19:09:49,WM_CHOICE side=right
+1777936189.839321,19:09:49,WM_CUE_REPLAY
+1777936190.550789,19:09:50,REWARD_DELIVERED side=right
+1777936198.314695,19:09:58,"Time: 1106981 ms, Sensor: Right Back"
+1777936199.756844,19:09:59,"Time: 1108425 ms, Sensor: Right Front"
+1777936200.763321,19:10:00,"Time: 1109431 ms, Sensor: Return Right"
+1777936200.796128,19:10:00,"WM_TRIAL_SUMMARY trial_index=39,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=NA,p_correction=1.00,latency_ms=6677"
+1777936203.260133,19:10:03,"Time: 1111921 ms, Sensor: WM1"
+1777936203.877625,19:10:03,"Time: 1112544 ms, Sensor: Wait"
+1777936203.906884,19:10:03,"Time: 1112545 ms, Sensor: Wait Sensor"
+1777936203.969577,19:10:03,"WM_TRIAL_START trial_index=40,standard_index=27,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,bias_left_count=6,p_right_correct=0.60,p_correction=NA"
+1777936207.684050,19:10:07,"Time: 1116350 ms, Sensor: Wait"
+1777936207.973511,19:10:07,"Time: 1116622 ms, Sensor: Gate"
+1777936207.997204,19:10:07,"Time: 1116624 ms, Sensor: Gate"
+1777936208.290841,19:10:08,"Time: 1116958 ms, Sensor: WM2"
+1777936209.976128,19:10:09,"Time: 1118645 ms, Sensor: Lick Right"
+1777936210.038643,19:10:10,WM_CHOICE side=right
+1777936210.066463,19:10:10,WM_CUE_REPLAY
+1777936210.781808,19:10:10,REWARD_DELIVERED side=right
+1777936220.378208,19:10:20,"Time: 1129041 ms, Sensor: Right Back"
+1777936221.822709,19:10:21,"Time: 1130485 ms, Sensor: Right Front"
+1777936222.644748,19:10:22,"Time: 1131309 ms, Sensor: Return Right"
+1777936222.676945,19:10:22,"WM_TRIAL_SUMMARY trial_index=40,standard_index=27,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=high,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=6,p_right_correct=0.60,p_correction=NA,latency_ms=6096"
+1777936229.320579,19:10:29,"Time: 1137974 ms, Sensor: WM1"
+1777936230.113747,19:10:30,"Time: 1138779 ms, Sensor: Wait Sensor"
+1777936230.174323,19:10:30,"WM_TRIAL_START trial_index=41,standard_index=28,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777936230.188860,19:10:30,"Time: 1138822 ms, Sensor: Wait"
+1777936232.459286,19:10:32,"Time: 1141120 ms, Sensor: Wait"
+1777936233.828132,19:10:33,"Time: 1142482 ms, Sensor: Wait"
+1777936234.156514,19:10:34,"Time: 1142805 ms, Sensor: Gate"
+1777936234.201443,19:10:34,"Time: 1142808 ms, Sensor: Gate"
+1777936234.543791,19:10:34,"Time: 1143197 ms, Sensor: WM2"
+1777936237.731643,19:10:37,"Time: 1146381 ms, Sensor: Lick Left"
+1777936237.787411,19:10:37,WM_CHOICE side=left
+1777936237.988944,19:10:37,PUNISH_DELIVERED reason=incorrect
+1777936241.209370,19:10:41,"Time: 1149869 ms, Sensor: Left Back"
+1777936243.403852,19:10:43,"Time: 1152058 ms, Sensor: Left Front"
+1777936244.672515,19:10:44,"Time: 1153331 ms, Sensor: Return Left"
+1777936244.705575,19:10:44,"WM_TRIAL_SUMMARY trial_index=41,standard_index=28,trial_type=standard,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=left,outcome=incorrect,replay_played=false,consecutive_misses=1,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=7603"
+1777936248.189079,19:10:48,"Time: 1156841 ms, Sensor: WM1"
+1777936248.854275,19:10:48,"Time: 1157499 ms, Sensor: Wait"
+1777936248.885397,19:10:48,"Time: 1157500 ms, Sensor: Wait Sensor"
+1777936248.917513,19:10:48,WM_CORRECTION_TRIAL
+1777936248.967117,19:10:48,"WM_TRIAL_START trial_index=42,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,bias_left_count=5,p_right_correct=NA,p_correction=1.00"
+1777936252.693343,19:10:52,"Time: 1161332 ms, Sensor: Wait"
+1777936252.950153,19:10:52,"Time: 1161606 ms, Sensor: Gate"
+1777936252.981051,19:10:52,"Time: 1161608 ms, Sensor: Gate"
+1777936253.383690,19:10:53,"Time: 1162029 ms, Sensor: WM2"
+1777936255.074548,19:10:55,"Time: 1163716 ms, Sensor: Lick Right"
+1777936255.136015,19:10:55,WM_CHOICE side=right
+1777936255.161233,19:10:55,WM_CUE_REPLAY
+1777936255.874651,19:10:55,REWARD_DELIVERED side=right
+1777936265.981265,19:11:05,"Time: 1174635 ms, Sensor: Right Back"
+1777936267.127400,19:11:07,"Time: 1175781 ms, Sensor: Right Front"
+1777936267.961742,19:11:07,"Time: 1176600 ms, Sensor: Return Right"
+1777936267.996859,19:11:07,"WM_TRIAL_SUMMARY trial_index=42,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=high,cue2=low,correct_side=right,chosen_side=right,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=NA,p_correction=1.00,latency_ms=6210"
+1777936271.718706,19:11:11,"Time: 1180367 ms, Sensor: WM1"
+1777936272.867001,19:11:12,"Time: 1181509 ms, Sensor: Wait Sensor"
+1777936272.930461,19:11:12,"WM_TRIAL_START trial_index=43,standard_index=29,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777936272.951749,19:11:12,"Time: 1181534 ms, Sensor: Wait"
+1777936275.514374,19:11:15,"Time: 1184160 ms, Sensor: Wait"
+1777936276.930334,19:11:16,"Time: 1185568 ms, Sensor: Gate"
+1777936276.961414,19:11:16,"Time: 1185570 ms, Sensor: Gate"
+1777936277.291252,19:11:17,"Time: 1185932 ms, Sensor: WM2"
+1777936278.920932,19:11:18,"Time: 1187562 ms, Sensor: Lick Right"
+1777936278.982354,19:11:18,WM_CHOICE side=right
+1777936279.182838,19:11:19,PUNISH_DELIVERED reason=incorrect
+1777936289.962560,19:11:29,"Time: 1198598 ms, Sensor: WM2"
+1777936292.007877,19:11:32,"Time: 1200653 ms, Sensor: Gate"
+1777936292.041634,19:11:32,"Time: 1200654 ms, Sensor: Gate"
+1777936306.314324,19:11:46,"Time: 1214955 ms, Sensor: Gate"
+1777936306.799169,19:11:46,"Time: 1215440 ms, Sensor: WM2"
+1777936309.537570,19:11:49,"Time: 1218176 ms, Sensor: Lick Left"
+1777936309.801055,19:11:49,PUNISH_DELIVERED reason=cross_lick
+1777936309.825927,19:11:49,WM_CROSS_LICK side=left
+1777936318.411964,19:11:58,"Time: 1227048 ms, Sensor: Left Back"
+1777936318.660785,19:11:58,PUNISH_DELIVERED reason=backward
+1777936318.690248,19:11:58,WM_BACKWARD sensor=Left Back
+1777936320.666576,19:12:00,"Time: 1229303 ms, Sensor: Left Front"
+1777936322.154766,19:12:02,"Time: 1230789 ms, Sensor: Return Left"
+1777936322.187915,19:12:02,"WM_TRIAL_SUMMARY trial_index=43,standard_index=29,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,chosen_side=right,outcome=backward,replay_played=false,consecutive_misses=1,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6053"
+1777936360.207597,19:12:40,"Time: 1268831 ms, Sensor: WM1"
+1777936360.803746,19:12:40,"Time: 1269428 ms, Sensor: Wait Sensor"
+1777936360.829599,19:12:40,WM_CORRECTION_TRIAL
+1777936360.877174,19:12:40,"WM_TRIAL_START trial_index=44,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,bias_left_count=5,p_right_correct=NA,p_correction=1.00"
+1777936360.891945,19:12:40,"Time: 1269497 ms, Sensor: Wait"
+1777936364.621625,19:12:44,"Time: 1273236 ms, Sensor: Wait"
+1777936364.976195,19:12:44,"Time: 1273590 ms, Sensor: Gate"
+1777936365.008577,19:12:45,"Time: 1273591 ms, Sensor: Gate"
+1777936365.395960,19:12:45,"Time: 1274018 ms, Sensor: WM2"
+1777936369.719335,19:12:49,"Time: 1278343 ms, Sensor: Lick Right"
+1777936369.782534,19:12:49,WM_CHOICE side=right
+1777936369.982715,19:12:49,PUNISH_DELIVERED reason=incorrect
+1777936372.488367,19:12:52,"Time: 1281111 ms, Sensor: Right Back"
+1777936373.463135,19:12:53,"Time: 1282078 ms, Sensor: Right Front"
+1777936374.379925,19:12:54,"Time: 1283003 ms, Sensor: Return Right"
+1777936374.412066,19:12:54,"WM_TRIAL_SUMMARY trial_index=44,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,chosen_side=right,outcome=incorrect,replay_played=false,consecutive_misses=2,bias_left_count=5,p_right_correct=NA,p_correction=1.00,latency_ms=8914"
+1777936381.476937,19:13:01,"Time: 1290089 ms, Sensor: WM1"
+1777936382.072556,19:13:02,"Time: 1290687 ms, Sensor: Wait"
+1777936382.099785,19:13:02,"Time: 1290690 ms, Sensor: Wait Sensor"
+1777936382.138360,19:13:02,WM_CORRECTION_TRIAL
+1777936382.177508,19:13:02,"WM_TRIAL_START trial_index=45,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,bias_left_count=5,p_right_correct=NA,p_correction=1.00"
+1777936385.319371,19:13:05,"Time: 1293938 ms, Sensor: Wait"
+1777936386.155098,19:13:06,"Time: 1294771 ms, Sensor: Gate"
+1777936386.186563,19:13:06,"Time: 1294772 ms, Sensor: Gate"
+1777936386.687204,19:13:06,"Time: 1295305 ms, Sensor: WM2"
+1777936388.191332,19:13:08,"Time: 1296811 ms, Sensor: Lick Left"
+1777936388.252070,19:13:08,WM_CHOICE side=left
+1777936388.282647,19:13:08,WM_CUE_REPLAY
+1777936388.997833,19:13:08,REWARD_DELIVERED side=left
+1777936400.119245,19:13:20,"Time: 1308723 ms, Sensor: Left Back"
+1777936402.063244,19:13:22,"Time: 1310674 ms, Sensor: Left Front"
+1777936403.236192,19:13:23,"Time: 1311850 ms, Sensor: Return Left"
+1777936403.268989,19:13:23,"WM_TRIAL_SUMMARY trial_index=45,standard_index=NA,trial_type=correction,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=NA,p_correction=1.00,latency_ms=6116"
+1777936408.290371,19:13:28,"Time: 1316892 ms, Sensor: WM1"
+1777936408.946034,19:13:28,"Time: 1317557 ms, Sensor: Wait Sensor"
+1777936409.009102,19:13:29,"WM_TRIAL_START trial_index=46,standard_index=30,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,bias_left_count=5,p_right_correct=0.50,p_correction=NA"
+1777936409.020245,19:13:29,"Time: 1317581 ms, Sensor: Wait"
+1777936412.680876,19:13:32,"Time: 1321289 ms, Sensor: Wait"
+1777936413.059142,19:13:33,"Time: 1321666 ms, Sensor: Gate"
+1777936413.085539,19:13:33,"Time: 1321667 ms, Sensor: Gate"
+1777936413.476474,19:13:33,"Time: 1322080 ms, Sensor: WM2"
+1777936415.365902,19:13:35,"Time: 1323964 ms, Sensor: Lick Left"
+1777936415.426830,19:13:35,WM_CHOICE side=left
+1777936415.464084,19:13:35,WM_CUE_REPLAY
+1777936416.157535,19:13:36,REWARD_DELIVERED side=left
+1777936458.264294,19:14:18,"Time: 1366843 ms, Sensor: Left Back"
+1777936460.062796,19:14:20,"Time: 1368660 ms, Sensor: Left Front"
+1777936462.616123,19:14:22,"Time: 1371209 ms, Sensor: Return Left"
+1777936462.650641,19:14:22,"WM_TRIAL_SUMMARY trial_index=46,standard_index=30,trial_type=standard,level=0,delay_ms=50,cue1=low,cue2=low,correct_side=left,chosen_side=left,outcome=correct,replay_played=true,consecutive_misses=0,bias_left_count=5,p_right_correct=0.50,p_correction=NA,latency_ms=6407"
+1777936498.674548,19:14:58,"Time: 1407258 ms, Sensor: Left Front"
+1777936502.626894,19:15:02,"Time: 1411212 ms, Sensor: Left Front"
+1777936505.089535,19:15:05,"Time: 1413676 ms, Sensor: Left Back"
+1777936507.743304,19:15:07,"Time: 1416313 ms, Sensor: Lick Left"
+1777936514.509180,19:15:14,"Time: 1423086 ms, Sensor: Lick Right"
+1777936517.581402,19:15:17,"Time: 1426161 ms, Sensor: Right Back"
+1777936520.042327,19:15:20,"Time: 1428620 ms, Sensor: Right Front"
+1777936521.254853,19:15:21,"Time: 1429837 ms, Sensor: Return Right"
+1777936531.338432,19:15:31,[System] Sent STOP_BEHAVIOR to Arduino.
+1777936531.347530,19:15:31,[WM] State saved: level 0.
