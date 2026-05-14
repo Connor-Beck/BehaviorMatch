@@ -314,7 +314,7 @@ session.timing.clock_corrections     1×1    struct                   ← fit pa
 
 **Datetime conversion (opt-in flag):** `load_session(file, 'datetime', true)` adds a `pc_datetime` column to every table where `pc_ts` exists, computed as `datetime(pc_ts, 'ConvertFrom', 'posixtime')`.
 
-`load_session.m` is ~50 lines. Recursion: walk the loaded struct, for each leaf that is a struct of equal-length column vectors, call `struct2table(leaf)`. Then apply categorical conversion to the named columns. Pure read-side; never modifies the file.
+`load_session.m` walks the loaded struct, converts known equal-length event/frame structs with `struct2table`, and applies categorical conversion to the named columns. Pure read-side; never modifies the file.
 
 ---
 
@@ -467,9 +467,9 @@ Steps 1–4 are zero risk to existing data: the parser's correction pipeline (§
 
 ## 11. MATLAB load wrapper (`load_session.m`) contract
 
-BehaviorMatch can emit `.mat` files via `--emit-mat`. A MATLAB convenience
-loader can be added by downstream projects if table/categorical conversion is
-needed.
+BehaviorMatch can emit `.mat` files via `--emit-mat`. The root-level
+`load_session.m` helper converts the raw struct export into MATLAB tables and
+categoricals.
 
 **Signature:**
 
@@ -505,8 +505,9 @@ function session = load_session(matfile, varargin)
 - Never prompts the user.
 - Never silently drops columns (only `'minimal'` is allowed to drop the audit log).
 
-**Test expectation:** downstream MATLAB loaders should load a fixture session
-and assert the resulting struct shape against this schema.
+**Test expectation:** MATLAB users can smoke-test by loading a parsed fixture
+with `session = load_session(file)` and checking that per-trial `events` and
+`sensor_events` are tables.
 
 ---
 

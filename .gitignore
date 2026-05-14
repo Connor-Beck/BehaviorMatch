@@ -1,15 +1,59 @@
+# Python bytecode
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+
+# Pytest/cache
 .pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+
+# Virtual environments
 .venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+__pypackages__/
+
+# Packaging
 build/
 dist/
+pip-wheel-metadata/
 *.egg-info/
+*.eggs/
+*.whl
+
+# HDF5 / MAT artifacts
 *.h5
 *.h5.tmp
 *.mat
 *.mat.tmp
+
+# Generated data products
 *_trials.csv
 *_events.csv
 *_sensor_events.csv
 *_summary.json
+
+# Logs and runtime files
+*.log
+*.sqlite3
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
+.env.*
+.python-version
+
+# Notebook checkpoints
+.ipynb_checkpoints/
