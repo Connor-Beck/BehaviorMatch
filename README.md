@@ -1,9 +1,11 @@
 # BehaviorMatch
 
 BehaviorMatch is a headless CLI for turning MouseMaze behavior logs into one
-uniform per-session output. It reads a session `_console.csv` or legacy
-`<base>.csv`, attaches timing sidecars when present, detects the firmware
-family, and writes a canonical `<base>.h5` output for downstream analysis.
+uniform per-session output. It accepts any normal CSV from a MouseMaze recording
+session, including `<base>.csv`, `<base>_console.csv`, and
+`<base>_mega_sync.csv`, then attaches matching timing sidecars when present,
+detects the firmware family, and writes canonical outputs for downstream
+analysis.
 
 Supported input layouts:
 
@@ -11,6 +13,8 @@ Supported input layouts:
 - A flat folder where all session files live together.
 - A folder with files split across subfolders, such as `console/`,
   `mega_sync/`, `mini2p_frames/`, `hardware_frames/`, and `ffv1_frames/`.
+- A single selected session CSV. The selected file can be the base log, console
+  log, Mega sync log, or one of the supported frame sidecars.
 
 ## Install
 
@@ -68,12 +72,30 @@ attach matching sidecars such as `<base>_mega_sync.csv`,
 `<base>_mini2P_frames.csv`, `<base>_hardware_frames.csv`, and
 `<base>_ffv1_frames.csv` when present.
 
-You can also select a sidecar file directly, including `<base>_mega_sync.csv`.
-BehaviorMatch uses the shared basename to find the matching primary log and
-other sidecars. If no primary log is available, a `_mega_sync.csv` file can be
-parsed on its own as a Mega-sync-only session; trial summaries that are not in
-the Mega stream will be unavailable, and outcomes are inferred from lick side
-versus correct side.
+You can also select one recording-output CSV directly. BehaviorMatch strips the
+known suffix, uses the shared basename to find the rest of the session, and then
+chooses the best primary source in this order:
+
+- `<base>_console.csv`
+- `<base>.csv`
+- `<base>_mega_sync.csv`, as a Mega-sync-only fallback
+
+These direct file selections are all valid:
+
+```text
+<base>.csv
+<base>_console.csv
+<base>_mega_sync.csv
+<base>_hardware_frames.csv
+<base>_mini2P_frames.csv
+<base>_mini2p_frames.csv
+<base>_ffv1_frames.csv
+```
+
+If no console or base log is available, a `_mega_sync.csv` file can be parsed on
+its own as a Mega-sync-only session. Trial summaries that are not in the Mega
+stream will be unavailable, and outcomes are inferred from lick side versus
+correct side.
 
 Parse one flat session folder in place:
 
@@ -91,6 +113,12 @@ Parse by selecting a `_mega_sync.csv` file:
 
 ```bash
 behaviormatch /path/to/Freelymoving_1363_tr1_0504_185130_091_mega_sync.csv --on-existing overwrite
+```
+
+From this repository root, the included test-style command looks like:
+
+```bash
+python -m behaviormatch "TestData/Freelymoving_073720_tr3_0516_154840_475_mega_sync.csv" --output-dir "TestData" --on-existing overwrite
 ```
 
 Parse selected files:
@@ -121,13 +149,20 @@ Optional exports:
 behaviormatch /path/to/session --emit-csv
 ```
 
-BehaviorMatch writes `<base>.mat` by default. Use `--no-emit-mat` when you only
-want the canonical HDF5 output.
+BehaviorMatch writes both `<base>.h5` and `<base>.mat` by default. Use
+`--no-emit-mat` only when you want to skip MATLAB output. Use `--emit-csv` when
+you also want CSV/JSON exports.
 
 Windows example with an explicit output folder:
 
 ```bat
 python -m behaviormatch "C:\Users\Public\Documents\Data\BV" --output-dir "C:\Users\Public\Documents\Data\BV" --on-existing overwrite
+```
+
+On macOS or Linux, use macOS/Linux paths instead of Windows `C:\...` paths:
+
+```bash
+python -m behaviormatch "/Users/connorbeck/Documents/Data/BV" --output-dir "/Users/connorbeck/Documents/Data/BV" --on-existing overwrite
 ```
 
 `--emit-csv` writes:
@@ -136,6 +171,33 @@ python -m behaviormatch "C:\Users\Public\Documents\Data\BV" --output-dir "C:\Use
 - `<base>_events.csv`
 - `<base>_sensor_events.csv`
 - `<base>_summary.json`
+
+## Timing Safeguards
+
+BehaviorMatch keeps timing tables conservative when the recording hardware
+produces partial or mismatched files.
+
+Mini2P frame matching uses the Mini2P frame sidecar as its source of truth:
+`<base>_mini2P_frames.csv` or `<base>_mini2p_frames.csv`. The exported Mini2P
+frame numbers are the rows from that file, not frame counts inferred from
+console text. If ScanImage starts briefly, logs a few pulses, and is then
+stopped and restarted, BehaviorMatch preserves only the frame rows that are
+actually present in the selected Mini2P sidecar and slices them into trials by
+their corrected timestamps.
+
+Blackfly FFV1 frame matching is reconciled against `<base>_hardware_frames.csv`.
+If the encoder and hardware TTL streams have different leading frame counts,
+extra startup frames are marked as orphaned instead of shifting the rest of the
+session onto the wrong hardware frame numbers.
+
+Mega event timing is corrected through the Mega-to-UNO and UNO-to-PC fits when
+there are at least two valid sync anchors. If the wire carrying the timing pulse
+between the Blackfly UNO and the Arduino Mega was disconnected, the fit cannot
+be trusted and BehaviorMatch falls back to the PC-side timestamps that were
+logged with the events. The output still writes, but downstream analyses should
+inspect `/session/timing/clock_corrections.attrs`, especially
+`n_mega_uno_anchors`, `n_uno_pc_anchors`, and residual fields, before treating
+Mega-event-to-camera alignment as hardware-synchronized.
 
 ## MATLAB Import
 
