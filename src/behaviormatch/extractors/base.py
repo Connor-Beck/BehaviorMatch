@@ -255,7 +255,7 @@ class BaseExtractor:
             trial.gate_open_us = mega_us
         elif tag == "WM_GATE_CMD" and "OPEN" in value and trial.gate_open_us is None:
             trial.gate_open_us = mega_us
-        elif tag == "SENSOR":
+        elif tag in {"SENSOR", "SENSOR_FAST"}:
             self._update_trial_from_sensor_name(trial, value, mega_us)
         elif tag == "RETURN" and trial.return_us is None:
             trial.return_us = mega_us

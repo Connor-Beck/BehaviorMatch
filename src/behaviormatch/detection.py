@@ -47,7 +47,11 @@ def identify(group: SessionFileGroup) -> tuple[str, str, Type]:
     """Return `(firmware, firmware_version, extractor_class)` for a session."""
     from .extractors.codev4_4 import CodeV44Extractor
     from .extractors.codev4_5 import CodeV45Extractor
+    from .extractors.mega_sync import MegaSyncExtractor
     from .extractors.wm_behavior import WMBehaviorExtractor
+
+    if group.primary_log == group.mega_sync and group.console_log is None and group.behavior_log is None:
+        return "MegaSync", "mega_sync", MegaSyncExtractor
 
     messages = _read_messages(group.primary_log)
 

@@ -16,8 +16,8 @@ def build_parser() -> argparse.ArgumentParser:
         "paths",
         nargs="+",
         help=(
-            "CSV files and/or folders. A folder may contain all files together, "
-            "or use sidecar subfolders when --recursive is set."
+            "CSV files and/or folders. A selected sidecar such as "
+            "<base>_mega_sync.csv is used to find or infer the session."
         ),
     )
     parser.add_argument(
@@ -31,7 +31,20 @@ def build_parser() -> argparse.ArgumentParser:
         help="Search folders recursively and group sidecars by shared session basename.",
     )
     parser.add_argument("--emit-csv", action="store_true", help="Also export trials/events/sensor CSVs and a summary JSON.")
-    parser.add_argument("--emit-mat", action="store_true", help="Also export a MATLAB .mat file; requires scipy.")
+    mat_group = parser.add_mutually_exclusive_group()
+    mat_group.add_argument(
+        "--emit-mat",
+        dest="emit_mat",
+        action="store_true",
+        default=True,
+        help="Export a MATLAB .mat file. This is the default.",
+    )
+    mat_group.add_argument(
+        "--no-emit-mat",
+        dest="emit_mat",
+        action="store_false",
+        help="Only write the canonical HDF5 output; skip MATLAB .mat export.",
+    )
     parser.add_argument(
         "--on-existing",
         choices=["skip", "overwrite", "versioned"],

@@ -77,7 +77,7 @@ def fit_uno_pc(rows: list[dict[str, Any]]) -> tuple[float, float, float, int]:
         if row.get("debounced"):
             continue
         uno_us = row.get("uno_edge_us", -1)
-        pc_ts = row.get("pc_ts", 0.0)
+        pc_ts = row.get("pc_ts", row.get("uno_pc_time_sec", 0.0))
         if uno_us is None or uno_us < 0 or pc_ts <= 0:
             continue
         xs.append(float(uno_us))
@@ -322,6 +322,14 @@ def apply_corrections(
 
     # 4) Mega ↔ UNO linear fit
     if timing.mega_sync:
+        if corrections.n_uno_pc_anchors < 2:
+            slope, intercept, residual_ms, n_anchors = fit_uno_pc(timing.mega_sync)
+            corrections.uno_pc_slope = slope
+            corrections.uno_pc_intercept = intercept
+            corrections.uno_pc_residual_ms = residual_ms
+            corrections.n_uno_pc_anchors = n_anchors
+            if n_anchors >= 2 and "uno_pc_drift_lin" not in applied:
+                applied.append("uno_pc_drift_lin")
         m_slope, m_intercept, m_residual, m_n = fit_mega_uno(timing.mega_sync)
         corrections.mega_uno_slope = m_slope
         corrections.mega_uno_intercept = m_intercept
@@ -406,7 +414,7 @@ def _build_sensor_events(trial, session_t0: float) -> list[dict[str, Any]]:
     for event in trial.events:
         sensor_name = ""
         mega_us = -1
-        if event.tag == "SENSOR" and event.kind == "MEGA_EVT":
+        if event.tag in {"SENSOR", "SENSOR_FAST"} and event.kind == "MEGA_EVT":
             sensor_name = canonicalize_sensor(event.value)
             mega_us = event.mega_us
         elif event.kind == "SENSOR_TXT":
@@ -440,6 +448,10 @@ def attach_timing(session: Session, group: SessionFileGroup) -> Session:
     _correct_event_times(session.events, corrections, session.session_t0_unix)
     for trial in session.trials:
         _correct_event_times(trial.events, corrections, session.session_t0_unix)
+        if trial.events:
+            trial.t_start_s = trial.events[0].t_session_s
+            if trial.t_end_s is not None:
+                trial.t_end_s = trial.events[-1].t_session_s
 
     # Slice frames per trial; build sensor_events
     for trial in session.trials:

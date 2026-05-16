@@ -7,6 +7,7 @@ import h5py
 import pytest
 
 from behaviormatch import discovery
+from behaviormatch.cli import build_parser
 from behaviormatch.detection import identify
 from behaviormatch.pipeline import parse_group
 
@@ -15,6 +16,17 @@ ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "tests" / "fixtures"
 FIXTURE_WM = FIXTURES / "wm_behavior"
 FIXTURE_CODEV45 = FIXTURES / "codev4_5"
+FIXTURE_MEGA_SYNC_ONLY = FIXTURES / "mega_sync_only"
+
+
+def test_cli_emits_mat_by_default() -> None:
+    parser = build_parser()
+
+    args = parser.parse_args(["/tmp/session"])
+    no_mat_args = parser.parse_args(["/tmp/session", "--no-emit-mat"])
+
+    assert args.emit_mat is True
+    assert no_mat_args.emit_mat is False
 
 
 def test_discovery_prefers_console_log() -> None:
@@ -45,6 +57,25 @@ def test_discovery_groups_explicit_files() -> None:
     assert group.ffv1_frames == paths[4]
 
 
+def test_discovery_sidecar_file_selects_full_session() -> None:
+    mega_sync_path = FIXTURE_CODEV45 / "Freelymoving_2001_codev45_0101_000000_000_mega_sync.csv"
+
+    groups = discovery.walk(mega_sync_path)
+
+    assert len(groups) == 1
+    group = groups[0]
+    assert group.console_log == FIXTURE_CODEV45 / "Freelymoving_2001_codev45_0101_000000_000_console.csv"
+    assert group.mega_sync == mega_sync_path
+    assert group.hardware_frames == FIXTURE_CODEV45 / "Freelymoving_2001_codev45_0101_000000_000_hardware_frames.csv"
+    assert group.mini2p_frames == FIXTURE_CODEV45 / "Freelymoving_2001_codev45_0101_000000_000_mini2P_frames.csv"
+    assert group.ffv1_frames == FIXTURE_CODEV45 / "Freelymoving_2001_codev45_0101_000000_000_ffv1_frames.csv"
+
+    cli_groups = discovery.walk_many([mega_sync_path])
+    assert len(cli_groups) == 1
+    assert cli_groups[0].console_log == group.console_log
+    assert cli_groups[0].mega_sync == group.mega_sync
+
+
 def test_discovery_groups_kind_separated_subfolders(tmp_path: Path) -> None:
     placements = {
         "console": "Freelymoving_2001_codev45_0101_000000_000_console.csv",
@@ -59,6 +90,28 @@ def test_discovery_groups_kind_separated_subfolders(tmp_path: Path) -> None:
         shutil.copy2(FIXTURE_CODEV45 / filename, target_dir / filename)
 
     groups = discovery.walk(tmp_path, recursive=True)
+
+    assert len(groups) == 1
+    assert groups[0].console_log is not None
+    assert groups[0].console_log.parent.name == "console"
+    assert groups[0].mega_sync is not None
+    assert groups[0].mega_sync.parent.name == "mega_sync"
+
+
+def test_discovery_kind_separated_sidecar_file_selects_full_session(tmp_path: Path) -> None:
+    placements = {
+        "console": "Freelymoving_2001_codev45_0101_000000_000_console.csv",
+        "mega_sync": "Freelymoving_2001_codev45_0101_000000_000_mega_sync.csv",
+        "hardware_frames": "Freelymoving_2001_codev45_0101_000000_000_hardware_frames.csv",
+        "mini2p_frames": "Freelymoving_2001_codev45_0101_000000_000_mini2P_frames.csv",
+        "ffv1_frames": "Freelymoving_2001_codev45_0101_000000_000_ffv1_frames.csv",
+    }
+    for folder, filename in placements.items():
+        target_dir = tmp_path / folder
+        target_dir.mkdir()
+        shutil.copy2(FIXTURE_CODEV45 / filename, target_dir / filename)
+
+    groups = discovery.walk(tmp_path / "mega_sync" / placements["mega_sync"])
 
     assert len(groups) == 1
     assert groups[0].console_log is not None
@@ -112,6 +165,34 @@ def test_codev45_timing_sidecars(tmp_path: Path) -> None:
         assert h5["session"]["timing"]["mega_sync"].shape[0] == 2
         assert h5["trials"]["0001"]["mkv_frames"].shape[0] >= 1
         assert "clock_corrections" in h5["session"]["timing"]
+
+
+def test_parse_mega_sync_only_fixture(tmp_path: Path) -> None:
+    mega_sync_path = FIXTURE_MEGA_SYNC_ONLY / "Freelymoving_9999_tr3_0101_000000_000_mega_sync.csv"
+    groups = discovery.walk(mega_sync_path)
+
+    assert len(groups) == 1
+    group = groups[0]
+    assert group.primary_log == mega_sync_path
+    assert group.mega_sync == mega_sync_path
+
+    firmware, _, _ = identify(group)
+    result = parse_group(group, output_dir=tmp_path, on_existing="overwrite", emit_mat=True)
+
+    assert firmware == "MegaSync"
+    assert result.session is not None
+    assert result.session.parse_status == "partial"
+    assert result.session.n_trials == 2
+    assert [trial.outcome for trial in result.session.trials] == ["correct", "incorrect"]
+    assert result.session.trials[0].sensor_events
+    assert result.mat_path is not None
+    assert result.mat_path.exists()
+
+    with h5py.File(result.h5_path, "r") as h5:
+        assert h5["session"].attrs["firmware"] == "MegaSync"
+        assert h5["session"].attrs["n_trials"] == 2
+        assert h5["session"]["timing"]["mega_sync"].shape[0] == 19
+        assert h5["trials"]["0001"]["sensor_events"].shape[0] >= 5
 
 
 def test_codev44_legacy_fixture(tmp_path: Path) -> None:
