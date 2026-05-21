@@ -1,0 +1,32 @@
+pc_ts,time_str,message
+1775800000.000,00:00:00,[System] Console log
+1775800000.566,00:00:00,Cue1: 13000
+1775800000.600,00:00:00,Cue2: 13000
+1775800000.650,00:00:00,Correct turn: Left
+1775800000.839,00:00:00,ACK:START_BEHAVIOR
+1775800000.875,00:00:00,Cue1: 13000
+1775800000.910,00:00:00,Cue2: 13000
+1775800000.950,00:00:00,Correct turn: Left
+1775800018.562,00:00:18,"Time: 18562 ms, Sensor: WM1"
+1775800039.537,00:00:39,"Time: 39537 ms, Sensor: Wait"
+1775800054.391,00:00:54,"Time: 54391 ms, Sensor: WM2"
+1775800069.319,00:01:09,"Time: 69319 ms, Sensor: Lick Left"
+1775800089.958,00:01:29,"Time: 89958 ms, Sensor: Return Left"
+1775800090.000,00:01:30,"Time: 	89974, Total trial: 	1, Success Rate: 	0, Correct Count: 	0, Miss Count: 	1, Received turn: 	0"
+1775800090.308,00:01:30,Cue1: 4000
+1775800090.400,00:01:30,Cue2: 13000
+1775800090.450,00:01:30,Correct turn: Right
+1775800103.587,00:01:43,"Time: 103587 ms, Sensor: WM1"
+1775800106.611,00:01:46,"Time: 106611 ms, Sensor: Wait"
+1775800120.000,00:02:00,"Time: 120000 ms, Sensor: WM2"
+1775800130.000,00:02:10,"Time: 130000 ms, Sensor: Lick Right"
+1775800140.000,00:02:20,"Time: 140000 ms, Sensor: Return Right"
+1775800141.000,00:02:21,"Time: 	141000, Total trial: 	2, Success Rate: 	50, Correct Count: 	1, Miss Count: 	1, Received turn: 	1"
+1775800141.200,00:02:21,Cue1: 4000
+1775800141.300,00:02:21,Cue2: 4000
+1775800141.350,00:02:21,Correct turn: Left
+1775800160.000,00:02:40,"Time: 160000 ms, Sensor: WM1"
+1775800180.000,00:03:00,"Time: 180000 ms, Sensor: WM2"
+1775800200.000,00:03:20,"Time: 200000 ms, Sensor: Lick Right"
+1775800210.000,00:03:30,"Time: 210000 ms, Sensor: Return Right"
+1775800211.000,00:03:31,"Time: 	211000, Total trial: 	3, Success Rate: 	33, Correct Count: 	1, Miss Count: 	2, Received turn: 	1"

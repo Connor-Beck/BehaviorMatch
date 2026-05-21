@@ -61,11 +61,22 @@ class MegaSyncExtractor(BaseExtractor):
             try:
                 self._apply_session_tag(session, event)
 
-                if self._opens_trial(event, pending):
-                    if active is not None:
-                        self._finish_trial(active)
-                        session.trials.append(active)
+                if active is None and self._is_sequence_start(event):
+                    for pending_event in pending:
+                        self.record_session_event(session, pending_event)
+                    pending = []
 
+                    trial_index += 1
+                    active = Trial(
+                        trial_index=trial_index,
+                        t_start_s=event.t_session_s,
+                        t_start_mega_us=event.mega_us,
+                    )
+                    self._apply_trial_tag(active, event)
+                    self.record_trial_event(active, event, session)
+                    continue
+
+                if active is None and self._opens_trial(event, pending):
                     start_event = pending.pop()
                     for pending_event in pending:
                         self.record_session_event(session, pending_event)
@@ -168,6 +179,9 @@ class MegaSyncExtractor(BaseExtractor):
     def _opens_trial(self, event: Event, pending: list[Event]) -> bool:
         return event.tag == "CUE1" and bool(pending) and self._is_wm1(pending[-1])
 
+    def _is_sequence_start(self, event: Event) -> bool:
+        return event.tag == "WM_SEQ_START_MS"
+
     def _closes_trial(self, event: Event) -> bool:
         if event.tag not in {"SENSOR", "SENSOR_FAST"}:
             return False
@@ -187,6 +201,12 @@ class MegaSyncExtractor(BaseExtractor):
             trial.cue2 = event.value
             if trial.cue2_us is None:
                 trial.cue2_us = event.mega_us
+        elif event.tag == "WM_SEQ" and event.value == "CUE1":
+            if trial.cue1_us is None:
+                trial.cue1_us = event.mega_us
+        elif event.tag == "WM_SEQ" and event.value == "CUE2":
+            if trial.cue2_us is None:
+                trial.cue2_us = event.mega_us
         elif event.tag == "CORRECT_TURN":
             trial.correct_side = event.value.lower()
         elif event.tag in {"SENSOR", "SENSOR_FAST"}:
@@ -198,5 +218,9 @@ class MegaSyncExtractor(BaseExtractor):
     def _finish_trial(self, trial: Trial) -> None:
         if trial.chosen_side != NA_STRING and trial.correct_side != NA_STRING:
             trial.outcome = "correct" if trial.chosen_side == trial.correct_side else "incorrect"
+        elif trial.reward_delivered:
+            trial.outcome = "correct"
+        elif trial.punishment_delivered:
+            trial.outcome = "incorrect"
         elif trial.outcome == NA_STRING:
             trial.outcome = "no_response"

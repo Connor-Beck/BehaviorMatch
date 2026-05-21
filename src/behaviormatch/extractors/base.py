@@ -45,16 +45,17 @@ class BaseExtractor:
     def parse(self) -> Session:
         raise NotImplementedError
 
-    def read_rows(self) -> list[RawLogRow]:
+    def read_rows(self, path: Path | None = None) -> list[RawLogRow]:
+        path = path or self.group.primary_log
         rows: list[RawLogRow] = []
-        with self.group.primary_log.open("r", newline="", encoding="utf-8", errors="ignore") as f:
+        with path.open("r", newline="", encoding="utf-8", errors="ignore") as f:
             reader = csv.reader(f)
             for i, row in enumerate(reader, start=1):
-                parsed = self._parse_csv_row(row, i, self.group.primary_log)
+                parsed = self._parse_csv_row(row, i, path)
                 if parsed is not None:
                     rows.append(parsed)
         if not rows:
-            raise ValueError(f"No parseable rows in {self.group.primary_log}")
+            raise ValueError(f"No parseable rows in {path}")
         return rows
 
     def _parse_csv_row(self, row: list[str], row_index: int, path: Path) -> RawLogRow | None:
@@ -84,7 +85,7 @@ class BaseExtractor:
     def new_session(self, rows: list[RawLogRow]) -> Session:
         session = Session(
             base_name=self.group.base_name,
-            source_log=self.group.primary_log,
+            source_log=rows[0].path,
             session_t0_unix=rows[0].pc_ts,
             firmware=self.firmware,
             firmware_version=self.firmware_version,
@@ -230,6 +231,8 @@ class BaseExtractor:
             trial.reward_delivered = True
         elif text.startswith("WM_CUE_REPLAY"):
             trial.replay_played = True
+        elif text.startswith("WM_TRIAL_RESTART"):
+            self._reset_trial_sequence_times(trial)
         elif text.startswith("WM_CROSS_LICK"):
             trial.outcome = "incorrect"
         elif text.startswith("WM_BACKWARD"):
@@ -253,10 +256,10 @@ class BaseExtractor:
             trial.cue2_us = mega_us
         elif tag == "WM_SEQ" and value == "DONE" and trial.gate_open_us is None:
             trial.gate_open_us = mega_us
-        elif tag == "WM_GATE_CMD" and "OPEN" in value and trial.gate_open_us is None:
+        elif tag == "WM_GATE_CMD" and self._is_wm_gate_open(value) and trial.gate_open_us is None:
             trial.gate_open_us = mega_us
         elif tag in {"SENSOR", "SENSOR_FAST"}:
-            self._update_trial_from_sensor_name(trial, value, mega_us)
+            self._update_trial_from_sensor_name(trial, value, mega_us, prefer_exact=True)
         elif tag == "RETURN" and trial.return_us is None:
             trial.return_us = mega_us
         elif tag in {"MOUSE_CHOICE", "WM_PHASE"} and trial.decision_us is None:
@@ -265,8 +268,22 @@ class BaseExtractor:
             trial.reward_delivered = True
         elif tag == "PUNISH":
             trial.punishment_delivered = True
+        elif tag == "WM_TRIAL_RESTART":
+            self._reset_trial_sequence_times(trial)
         elif tag == "TRIAL_START_INDEX" and trial.t_start_mega_us is None:
             trial.t_start_mega_us = mega_us
+        elif tag == "OUTCOME":
+            _OUTCOME_MAP = {
+                "CORRECT": "correct",
+                "INCORRECT": "incorrect",
+                "MISS": "no_response",
+                "SHAPING_REWARD": "shaping_reward",
+                "NO_RESPONSE": "no_response",
+                "BACKWARD": "backward",
+            }
+            mapped = _OUTCOME_MAP.get(value.upper().strip())
+            if mapped:
+                trial.outcome = mapped
 
     def _update_trial_from_sensor_text(self, trial: Trial, event: Event) -> None:
         sensor = parse_sensor_text(event.raw_text)
@@ -277,14 +294,42 @@ class BaseExtractor:
             return
         self._update_trial_from_sensor_name(trial, sensor_name, time_ms * 1000)
 
-    def _update_trial_from_sensor_name(self, trial: Trial, sensor_name: str, approx_us: int) -> None:
+    def _update_trial_from_sensor_name(
+        self,
+        trial: Trial,
+        sensor_name: str,
+        approx_us: int,
+        *,
+        prefer_exact: bool = False,
+    ) -> None:
         sensor = sensor_name.strip()
-        if sensor == "WM2" and trial.wm2_us is None:
-            trial.wm2_us = approx_us
-        elif sensor.startswith("Lick") and trial.lick_us is None:
-            trial.lick_us = approx_us
-        elif sensor.startswith("Return") and trial.return_us is None:
-            trial.return_us = approx_us
+        if sensor == "WM2":
+            trial.wm2_us = self._choose_sensor_time(trial.wm2_us, approx_us, prefer_exact)
+        elif sensor.startswith("Lick"):
+            trial.lick_us = self._choose_sensor_time(trial.lick_us, approx_us, prefer_exact)
+        elif sensor.startswith("Return"):
+            trial.return_us = self._choose_sensor_time(trial.return_us, approx_us, prefer_exact)
+
+    def _choose_sensor_time(
+        self,
+        existing_us: int | None,
+        candidate_us: int,
+        prefer_exact: bool,
+    ) -> int:
+        if existing_us is None:
+            return candidate_us
+        if prefer_exact and 0 <= candidate_us - existing_us <= 10_000:
+            return candidate_us
+        return existing_us
+
+    def _reset_trial_sequence_times(self, trial: Trial) -> None:
+        trial.cue1_us = None
+        trial.cue2_us = None
+        trial.gate_open_us = None
+
+    def _is_wm_gate_open(self, value: str) -> bool:
+        parsed = to_int(value)
+        return parsed == 91 or "OPEN" in str(value).upper()
 
     def mark_partial(self, session: Session, message: str) -> None:
         session.parse_status = "partial"

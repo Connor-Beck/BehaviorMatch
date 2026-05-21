@@ -19,6 +19,7 @@ from .schema import (
 TTL_DEBOUNCE_GUARD_US = 1000   # 1 ms; spurious double-edges are ~10 µs apart, real frames are ≥15 ms apart
 DEFAULT_UNO_PC_SLOPE = 1e-6     # 1 µs UNO ≈ 1e-6 s PC, used when the fit can't run
 DEFAULT_MEGA_UNO_SLOPE = 1.0    # both clocks tick in µs; nominal slope is 1.0
+MAX_MEGA_UNO_RESIDUAL_US = 100_000.0  # Above 100 ms, row-wise Mega↔UNO anchors are not trustworthy.
 
 
 def _float(row: dict[str, str], key: str, default: float = 0.0) -> float:
@@ -335,16 +336,28 @@ def apply_corrections(
         corrections.mega_uno_intercept = m_intercept
         corrections.mega_uno_residual_us = m_residual
         corrections.n_mega_uno_anchors = m_n
-        if m_n >= 2:
+        mega_uno_valid = m_n >= 2 and m_residual <= MAX_MEGA_UNO_RESIDUAL_US
+        if mega_uno_valid:
             applied.append("mega_uno_lin")
+        elif m_n >= 2:
+            session.parse_errors.append(
+                f"mega_uno_residual_us={m_residual:.1f} exceeds {MAX_MEGA_UNO_RESIDUAL_US:.0f}; "
+                "using PC-side Mega event timestamps"
+            )
         u_slope = corrections.uno_pc_slope
         u_intercept = corrections.uno_pc_intercept
         for row in timing.mega_sync:
             uno_us = row.get("uno_edge_us", -1)
-            if uno_us is not None and uno_us >= 0 and corrections.n_uno_pc_anchors >= 2:
+            if (
+                mega_uno_valid
+                and uno_us is not None
+                and uno_us >= 0
+                and corrections.n_uno_pc_anchors >= 2
+            ):
                 row["t_session_s"] = u_slope * float(uno_us) + u_intercept - session_t0
             else:
-                row["t_session_s"] = row.get("uno_pc_time_sec", 0.0) - session_t0
+                event_pc = row.get("mega_evt_pc_time_sec", 0.0) or row.get("uno_pc_time_sec", 0.0)
+                row["t_session_s"] = event_pc - session_t0
 
     # 5) FFV1 ↔ hardware reconciliation
     if timing.behavior_frames_mkv and timing.hardware_frames:
@@ -395,6 +408,8 @@ def _correct_event_times(
     if corrections.n_uno_pc_anchors < 2:
         return
     if corrections.n_mega_uno_anchors < 2:
+        return
+    if corrections.mega_uno_residual_us > MAX_MEGA_UNO_RESIDUAL_US:
         return
     u_slope = corrections.uno_pc_slope
     u_intercept = corrections.uno_pc_intercept
@@ -449,7 +464,14 @@ def attach_timing(session: Session, group: SessionFileGroup) -> Session:
     for trial in session.trials:
         _correct_event_times(trial.events, corrections, session.session_t0_unix)
         if trial.events:
-            trial.t_start_s = trial.events[0].t_session_s
+            if trial.t_start_mega_us is not None:
+                start_event = next(
+                    (e for e in trial.events if e.mega_us == trial.t_start_mega_us),
+                    None,
+                )
+                trial.t_start_s = start_event.t_session_s if start_event else trial.events[0].t_session_s
+            else:
+                trial.t_start_s = trial.events[0].t_session_s
             if trial.t_end_s is not None:
                 trial.t_end_s = trial.events[-1].t_session_s
 

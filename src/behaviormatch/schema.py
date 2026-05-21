@@ -16,7 +16,7 @@ TRIAL_TYPE_REPLAY = "replay"
 TRIAL_TYPE_RANDOM_CUE = "random_cue"
 TRIAL_TYPE_SYNTHETIC = "synthetic"
 
-OUTCOME_VALUES = {"correct", "incorrect", "no_response", "aborted", "backward", "NA"}
+OUTCOME_VALUES = {"correct", "incorrect", "no_response", "aborted", "backward", "shaping_reward", "NA"}
 
 SENSOR_TEXT_RE = re.compile(r"Time:\s*(?P<ms>\d+)\s*ms,\s*Sensor:\s*(?P<sensor>.+)$")
 KV_PAIR_RE = re.compile(r"(?P<key>[A-Za-z0-9_]+)=(?P<value>[^, ]+)")

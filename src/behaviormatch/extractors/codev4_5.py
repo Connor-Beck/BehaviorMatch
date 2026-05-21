@@ -107,10 +107,11 @@ class CodeV45Extractor(BaseExtractor):
             trial.trial_index = parsed_index
 
         correct_count = to_int(fields.get("correct_count"), last_correct_count) or last_correct_count
-        trial.outcome = "correct" if correct_count > last_correct_count else "incorrect"
+        if trial.outcome in ("NA", ""):
+            trial.outcome = "correct" if correct_count > last_correct_count else "incorrect"
 
         received = fields.get("received_turn")
-        if received:
+        if received and trial.chosen_side in ("NA", ""):
             trial.chosen_side = infer_received_turn(received)
 
         stage1 = to_int(fields.get("stage1_active_phase"))

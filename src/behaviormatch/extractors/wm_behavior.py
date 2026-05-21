@@ -6,8 +6,9 @@ from .base import BaseExtractor
 
 class WMBehaviorExtractor(BaseExtractor):
     def parse(self) -> Session:
-        rows = self.read_rows()
+        rows = self._read_best_event_rows()
         session = self.new_session(rows)
+        session.metadata["event_source_log"] = str(rows[0].path)
 
         active: Trial | None = None
         saw_end = False
@@ -40,6 +41,8 @@ class WMBehaviorExtractor(BaseExtractor):
                         values = parse_key_values(text)
                         active.apply_values(values)
                         active.t_end_s = event.t_session_s
+                        session.trials.append(active)
+                        active = None
                     elif text.startswith("WM_END"):
                         self._apply_wm_end(session, text)
                         if active.t_end_s is None:
@@ -63,6 +66,27 @@ class WMBehaviorExtractor(BaseExtractor):
                 session.trials.append(active)
 
         return self.finalize_session(session)
+
+    def _read_best_event_rows(self):
+        rows = self.read_rows()
+        behavior_log = self.group.behavior_log
+        if behavior_log is None or behavior_log == self.group.primary_log:
+            return rows
+
+        try:
+            behavior_rows = self.read_rows(behavior_log)
+        except Exception:
+            return rows
+
+        if self._has_wm_trials(behavior_rows) and self._mega_event_count(behavior_rows) > self._mega_event_count(rows):
+            return behavior_rows
+        return rows
+
+    def _has_wm_trials(self, rows) -> bool:
+        return any(row.message.startswith("WM_TRIAL_START") for row in rows)
+
+    def _mega_event_count(self, rows) -> int:
+        return sum(1 for row in rows if row.message.startswith("MEGA_EVT,"))
 
     def _apply_wm_end(self, session: Session, text: str) -> None:
         values = parse_key_values(text)
